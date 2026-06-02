@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Island Fitness Challenge 🌴</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #FF6B6B;
+    --gold: #FFD93D;
+    --teal: #4ECDC4;
+    --cream: #FFF8F0;
+    --dark: #1a1a2e;
+    --pink: #FF9A9E;
+    --soft: #FFE4E1;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* ── Setup Screen ── */
+  .setup-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF9A9E 40%, #FFD93D 100%);
+  }
+
+  .setup-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 36px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .setup-palm { font-size: 52px; display: block; margin-bottom: 12px; animation: sway 3s ease-in-out infinite; }
+
+  .setup-card h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .setup-card h1 em { color: var(--coral); font-style: italic; }
+
+  .setup-card p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  .setup-field { text-align: left; margin-bottom: 16px; }
+
+  .setup-field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .setup-field input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--dark);
+    outline: none;
+    transition: border-color 0.2s;
+    background: white;
+  }
+
+  .setup-field input:focus { border-color: var(--coral); }
+
+  .setup-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0 16px;
+    color: #ccc;
+    font-size: 13px;
+  }
+  .setup-divider::before, .setup-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e8e8e8;
+  }
+
+  .setup-optional { font-size: 12px; color: #aaa; margin-bottom: 8px; text-align: left; }
+
+  .setup-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--coral);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+  }
+  .setup-btn:hover { background: #e05555; }
+
+  .setup-solo {
+    background: none;
+    border: 2px solid #e8e8e8;
+    color: #888;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .setup-solo:hover { background: #f9f9f9; border-color: #ccc; }
+
+  /* ── Main App ── */
+  #app { display: none; }
+
+  .hero {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF9A9E 40%, #FFD93D 100%);
+    padding: 48px 24px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(255,217,61,0.3) 0%, transparent 50%);
+  }
+
+  .hero-emoji { font-size: 48px; display: block; margin-bottom: 12px; animation: sway 3s ease-in-out infinite; }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 48px);
+    color: white;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    position: relative;
+    line-height: 1.2;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--gold); }
+
+  .hero p { color: rgba(255,255,255,0.9); margin-top: 10px; font-size: 15px; position: relative; }
+
+  .hero-names {
+    display: inline-flex;
+    gap: 12px;
+    margin-top: 14px;
+    position: relative;
+  }
+
+  .hero-name-badge {
+    background: rgba(255,255,255,0.2);
+    border: 1.5px solid rgba(255,255,255,0.4);
+    color: white;
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .hero-name-badge:hover { background: rgba(255,255,255,0.3); }
+
+  .rule-banner {
+    background: var(--dark);
+    color: var(--gold);
+    text-align: center;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .rule-banner strong { color: white; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 32px 20px 60px; }
+
+  .week-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 28px; scrollbar-width: none; }
+  .week-tabs::-webkit-scrollbar { display: none; }
+
+  .week-tab {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: 2px solid #e0e0e0;
+    background: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s;
+    color: #666;
+  }
+  .week-tab:hover { border-color: var(--coral); color: var(--coral); }
+  .week-tab.active { background: var(--coral); border-color: var(--coral); color: white; }
+  .week-tab.completed { background: var(--teal); border-color: var(--teal); color: white; }
+
+  .week-card { background: white; border-radius: 20px; padding: 28px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 20px; }
+
+  .week-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+
+  .week-title { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--dark); }
+
+  .week-theme { background: var(--soft); color: var(--coral); padding: 6px 14px; border-radius: 100px; font-size: 13px; font-weight: 500; }
+
+  .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: 24px; }
+  @media (max-width: 600px) { .days-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .day-cell { text-align: center; cursor: pointer; }
+  .day-label { font-size: 10px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+
+  .day-circle {
+    width: 44px; height: 44px; border-radius: 50%; border: 2px solid #e8e8e8;
+    display: flex; align-items: center; justify-content: center; margin: 0 auto;
+    font-size: 18px; transition: all 0.2s; background: white; cursor: pointer;
+  }
+  .day-circle:hover { border-color: var(--coral); transform: scale(1.05); }
+  .day-circle.you-done { border-color: var(--pink); background: var(--soft); }
+  .day-circle.hub-done { border-color: #4ECDC4; background: #e8fafa; }
+  .day-circle.both-done { border-color: var(--gold); background: #fff9e0; animation: glow 1s ease; }
+  .day-circle.rest { background: #f5f5f5; border-color: #e0e0e0; cursor: default; }
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 0 0 rgba(255,217,61,0.5); }
+    70% { box-shadow: 0 0 0 10px rgba(255,217,61,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,217,61,0); }
+  }
+
+  .workouts-section { margin-top: 8px; }
+  .workouts-title { font-size: 13px; font-weight: 500; color: #999; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 14px; }
+
+  .workout-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+
+  .workout-card { border-radius: 14px; padding: 16px; border: 2px solid transparent; transition: all 0.2s; }
+  .workout-card.pilates { background: linear-gradient(135deg, #ffe4f0, #ffd1e8); border-color: #ffb3d1; }
+  .workout-card.strength { background: linear-gradient(135deg, #e0f0ff, #d1e8ff); border-color: #a8d4ff; }
+  .workout-card.cardio { background: linear-gradient(135deg, #fff3d4, #ffe8a8); border-color: #ffd166; }
+  .workout-card.active-rest { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-color: #a5d6a7; }
+  .workout-card.hiit { background: linear-gradient(135deg, #fce4ec, #f8bbd0); border-color: #f48fb1; }
+  .workout-card.walk { background: linear-gradient(135deg, #e8eaf6, #c5cae9); border-color: #9fa8da; }
+
+  .workout-card-icon { font-size: 22px; margin-bottom: 6px; }
+  .workout-card-title { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+  .workout-card-detail { font-size: 12px; color: #555; line-height: 1.4; }
+  .workout-card-min { font-size: 11px; color: #888; margin-top: 4px; }
+
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; align-items: center; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #666; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+  .progress-section { background: white; border-radius: 20px; padding: 24px 28px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); margin-bottom: 20px; }
+  .progress-title { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 16px; }
+  .progress-people { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .person-name { font-size: 13px; font-weight: 600; color: #888; margin-bottom: 6px; }
+  .person-bar-bg { background: #f0f0f0; border-radius: 100px; height: 10px; overflow: hidden; }
+  .person-bar { height: 100%; border-radius: 100px; transition: width 0.6s ease; }
+  .bar-you { background: linear-gradient(90deg, var(--pink), var(--coral)); }
+  .bar-hub { background: linear-gradient(90deg, var(--teal), #2ecc71); }
+  .person-count { font-size: 12px; color: #999; margin-top: 4px; }
+
+  .streak-box { background: linear-gradient(135deg, var(--gold) 0%, #ffb347 100%); border-radius: 12px; padding: 14px 18px; display: flex; align-items: center; gap: 12px; }
+  .streak-emoji { font-size: 28px; }
+  .streak-text { font-size: 13px; font-weight: 500; }
+  .streak-count { font-size: 20px; font-weight: 700; }
+
+  .rules-section { background: var(--dark); border-radius: 20px; padding: 28px; color: white; margin-bottom: 20px; }
+  .rules-title { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); margin-bottom: 18px; }
+  .rule-list { list-style: none; }
+  .rule-list li { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.85); }
+  .rule-list li:last-child { border-bottom: none; }
+  .rule-list li .rule-icon { font-size: 18px; flex-shrink: 0; }
+
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .modal-overlay.show { opacity: 1; pointer-events: all; }
+  .modal { background: white; border-radius: 24px; padding: 36px; text-align: center; max-width: 320px; width: 90%; transform: scale(0.9); transition: transform 0.3s; }
+  .modal-overlay.show .modal { transform: scale(1); }
+  .modal h2 { font-family: 'Playfair Display', serif; font-size: 26px; margin: 12px 0 8px; }
+  .modal p { font-size: 14px; color: #666; margin-bottom: 20px; }
+  .modal-btn { background: var(--coral); color: white; border: none; padding: 12px 28px; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; transition: background 0.2s; }
+  .modal-btn:hover { background: #e05555; }
+  .who-did-buttons { display: flex; gap: 10px; justify-content: center; margin-bottom: 8px; }
+  .who-btn { flex: 1; padding: 12px; border-radius: 14px; border: 2px solid transparent; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; transition: all 0.2s; }
+  .who-btn.you-btn { background: var(--soft); border-color: var(--pink); color: var(--coral); }
+  .who-btn.hub-btn { background: #e8fafa; border-color: var(--teal); color: #2a9d8f; }
+  .who-btn.both-btn { background: #fff9e0; border-color: var(--gold); color: #b8860b; width: 100%; }
+  .who-btn:hover { transform: scale(1.03); }
+
+  /* Edit names modal */
+  .edit-field { text-align: left; margin-bottom: 12px; }
+  .edit-field label { display: block; font-size: 12px; font-weight: 500; color: #888; margin-bottom: 5px; }
+  .edit-field input { width: 100%; padding: 10px 14px; border: 2px solid #e8e8e8; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; }
+  .edit-field input:focus { border-color: var(--coral); }
+</style>
+</head>
+<body>
+
+<!-- Setup Screen -->
+<div class="setup-screen" id="setup-screen">
+  <div class="setup-card">
+    <span class="setup-palm">🌴</span>
+    <h1>Love Island <em>Fitness</em> Challenge</h1>
+    <p>8 weeks · No workout = No episode<br>Enter your names to get started 💪</p>
+
+    <div class="setup-field">
+      <label>Your name</label>
+      <input type="text" id="setup-name1" placeholder="e.g. Emma" maxlength="20">
+    </div>
+
+    <div class="setup-divider">+ partner</div>
+
+    <div class="setup-field">
+      <label>Partner's name</label>
+      <input type="text" id="setup-name2" placeholder="e.g. Jake" maxlength="20">
+    </div>
+
+    <button class="setup-btn" onclick="startChallenge()">Let's go! 🌴</button>
+    <button class="setup-btn setup-solo" onclick="startSolo()">Just me for now</button>
+  </div>
+</div>
+
+<!-- Main App -->
+<div id="app">
+
+<div class="hero">
+  <span class="hero-emoji">🌴</span>
+  <h1>Love Island <em>Fitness</em> Challenge</h1>
+  <p>8 weeks · No workout = No episode · Both must sweat to watch 💪</p>
+  <div class="hero-names">
+    <span class="hero-name-badge" id="hero-name1" onclick="openEditNames()">💗 You</span>
+    <span class="hero-name-badge" id="hero-name2" onclick="openEditNames()">💪 Partner</span>
+  </div>
+</div>
+
+<div class="rule-banner">
+  🔒 <strong>The Golden Rule:</strong> Both of you must complete your workout to unlock that night's episode. No excuses!
+</div>
+
+<div class="container">
+
+  <div class="progress-section">
+    <div class="progress-title">🏆 Your Progress</div>
+    <div class="progress-people">
+      <div class="person-stat">
+        <div class="person-name" id="label-you">YOU 💗</div>
+        <div class="person-bar-bg"><div class="person-bar bar-you" id="bar-you" style="width:0%"></div></div>
+        <div class="person-count" id="count-you">0 / 48 workouts</div>
+      </div>
+      <div class="person-stat">
+        <div class="person-name" id="label-hub">PARTNER 💪</div>
+        <div class="person-bar-bg"><div class="person-bar bar-hub" id="bar-hub" style="width:0%"></div></div>
+        <div class="person-count" id="count-hub">0 / 48 workouts</div>
+      </div>
+    </div>
+    <div class="streak-box">
+      <span class="streak-emoji">🔥</span>
+      <div>
+        <div class="streak-count" id="streak-count">0 days</div>
+        <div class="streak-text">Current both-done streak</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rules-section">
+    <div class="rules-title">📋 Challenge Rules</div>
+    <ul class="rule-list">
+      <li><span class="rule-icon">🔒</span>Both of you must complete your daily workout before watching Love Island — no exceptions.</li>
+      <li><span class="rule-icon">⏱️</span>Minimum 20 minutes counts. Goal is 45 minutes. Rest days are your gift — use them!</li>
+      <li><span class="rule-icon">🔄</span>Each week has a theme to keep things fresh. You follow your plan; your partner follows theirs.</li>
+      <li><span class="rule-icon">🌴</span>Sundays are active rest — a walk together counts as both your workouts.</li>
+      <li><span class="rule-icon">🎯</span>Complete 6+ weeks = Season Champions. Complete all 8 = Love Island Legends! 🏆</li>
+    </ul>
+  </div>
+
+  <div class="week-tabs" id="week-tabs"></div>
+  <div id="week-content"></div>
+
+</div>
+
+<!-- Log workout modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div style="font-size:42px" id="modal-emoji">💪</div>
+    <h2 id="modal-title">Who worked out?</h2>
+    <p id="modal-subtitle">Tap to log your sweat session</p>
+    <div class="who-did-buttons">
+      <button class="who-btn you-btn" id="btn-you" onclick="logWorkout('you')">💗 Me</button>
+      <button class="who-btn hub-btn" id="btn-hub" onclick="logWorkout('hub')">💪 Partner</button>
+    </div>
+    <div class="who-did-buttons">
+      <button class="who-btn both-btn" onclick="logWorkout('both')">🌴 Both of us!</button>
+    </div>
+    <div style="height:8px"></div>
+    <button class="modal-btn" style="background:#ccc;color:#555;" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<!-- Edit names modal -->
+<div class="modal-overlay" id="edit-modal">
+  <div class="modal">
+    <div style="font-size:36px">✏️</div>
+    <h2 style="margin:10px 0 16px">Edit names</h2>
+    <div class="edit-field">
+      <label>Your name</label>
+      <input type="text" id="edit-name1" maxlength="20">
+    </div>
+    <div class="edit-field">
+      <label>Partner's name</label>
+      <input type="text" id="edit-name2" maxlength="20">
+    </div>
+    <div style="display:flex;gap:8px;margin-top:16px">
+      <button class="modal-btn" onclick="saveNames()" style="flex:1">Save</button>
+      <button class="modal-btn" onclick="closeEditModal()" style="flex:1;background:#ccc;color:#555">Cancel</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- end #app -->
+
+<script>
+const STORAGE_KEY = 'lifc_v3';
+const weeks = [
+  { title: "Week 1", theme: "Build the Habit",
+    you: [
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Full body mat class or YouTube session", min: "45 min" },
+      { icon: "🚶", type: "walk", title: "Power Walk", detail: "Brisk outdoor walk, podcast on", min: "30 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Core & glutes focus", min: "45 min" },
+      { icon: "💪", type: "active-rest", title: "Stretch + Walk", detail: "Easy movement day", min: "20 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Arms, back & flexibility", min: "45 min" },
+      { icon: "🚶", type: "walk", title: "Long Walk", detail: "60 min outdoors — enjoy it!", min: "60 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ],
+    hub: [
+      { icon: "🏋️", type: "strength", title: "Bench & Push", detail: "Chest, shoulders, triceps", min: "45 min" },
+      { icon: "🏃", type: "cardio", title: "Treadmill Run", detail: "Steady state, moderate pace", min: "30 min" },
+      { icon: "🏋️", type: "strength", title: "Pull Day", detail: "Back, biceps, rows", min: "45 min" },
+      { icon: "🏃", type: "cardio", title: "Intervals", detail: "1 min on / 1 min off x10", min: "25 min" },
+      { icon: "🏋️", type: "strength", title: "Legs", detail: "Squats, deadlifts, lunges", min: "45 min" },
+      { icon: "🏃", type: "cardio", title: "Easy Run", detail: "Relaxed jog, no pressure", min: "30 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ]
+  },
+  { title: "Week 2", theme: "Turn It Up",
+    you: [
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Add resistance bands this week", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "Home HIIT", detail: "20 min bodyweight circuit — no rest!", min: "20 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Reformer style or mat", min: "45 min" },
+      { icon: "🚶", type: "walk", title: "Hilly Walk", detail: "Find some incline!", min: "35 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Flow & stretch", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "Dance Cardio", detail: "YouTube dance class — fun one!", min: "30 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ],
+    hub: [
+      { icon: "🏋️", type: "strength", title: "Push + Core", detail: "Supersets: bench + plank circuits", min: "45 min" },
+      { icon: "🏃", type: "cardio", title: "Tempo Run", detail: "Comfortably hard pace", min: "35 min" },
+      { icon: "🏋️", type: "strength", title: "Pull + Core", detail: "Rows, pull-ups, dead bugs", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "Treadmill HIIT", detail: "Incline sprints 30s on / 30s off", min: "25 min" },
+      { icon: "🏋️", type: "strength", title: "Legs + Glutes", detail: "Romanian deadlifts, lunges", min: "45 min" },
+      { icon: "🏃", type: "cardio", title: "5K Challenge", detail: "Run or walk 5K, time yourself!", min: "30 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ]
+  },
+  { title: "Week 3", theme: "Sweat & Glow",
+    you: [
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Longer 50 min class this week", min: "50 min" },
+      { icon: "🚶", type: "walk", title: "Interval Walk", detail: "1 min fast / 2 min easy, repeat", min: "30 min" },
+      { icon: "🔥", type: "hiit", title: "Bodyweight HIIT", detail: "Squats, burpees, mountain climbers", min: "25 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Lower body focus", min: "45 min" },
+      { icon: "🚶", type: "walk", title: "Long Walk", detail: "60 min, try somewhere new", min: "60 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Full body + meditation finish", min: "45 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ],
+    hub: [
+      { icon: "🏋️", type: "strength", title: "Upper Strength", detail: "Increase weight from week 2", min: "50 min" },
+      { icon: "🏃", type: "cardio", title: "Run + Cooldown", detail: "30 min run + 10 min stretch", min: "40 min" },
+      { icon: "🏋️", type: "strength", title: "Lower Strength", detail: "Heavier squats, box jumps", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "Full Body Circuit", detail: "5 moves, 5 rounds, minimal rest", min: "30 min" },
+      { icon: "🏋️", type: "strength", title: "Push & Pull", detail: "Upper body superset day", min: "45 min" },
+      { icon: "🏃", type: "cardio", title: "Endurance Run", detail: "Longest run of the season so far", min: "40 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ]
+  },
+  { title: "Week 4", theme: "Halfway Heroes",
+    you: [
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Treat yourself — best class of the month", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "30 Min HIIT", detail: "Your hardest session yet!", min: "30 min" },
+      { icon: "🚶", type: "walk", title: "Walk + Podcast", detail: "Chill out walk, your fave pod", min: "45 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Arms & core", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "Dance HIIT", detail: "Zumba or YouTube dance cardio", min: "30 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Deep stretch & flow reward session", min: "50 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ],
+    hub: [
+      { icon: "🏋️", type: "strength", title: "Max Effort Day", detail: "Test your 1-rep max on bench", min: "50 min" },
+      { icon: "🏃", type: "cardio", title: "Fun Run", detail: "No pressure, just enjoy it", min: "30 min" },
+      { icon: "🏋️", type: "strength", title: "Leg Day", detail: "Heaviest legs session yet", min: "50 min" },
+      { icon: "🔥", type: "hiit", title: "Sprint Intervals", detail: "Treadmill sprints, all out", min: "25 min" },
+      { icon: "🏋️", type: "strength", title: "Full Body", detail: "Compound moves only — squat, bench, row", min: "45 min" },
+      { icon: "🏃", type: "cardio", title: "Celebration Run", detail: "Halfway there — celebrate it!", min: "35 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ]
+  },
+  { title: "Week 5", theme: "Second Wind",
+    you: [
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Add ankle weights if you have them", min: "45 min" },
+      { icon: "🚶", type: "walk", title: "Power Walk", detail: "Arms pumping, fast pace", min: "35 min" },
+      { icon: "🔥", type: "hiit", title: "Tabata", detail: "20s on / 10s off, 8 rounds, 4 moves", min: "25 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Balance & stability focus", min: "45 min" },
+      { icon: "🚶", type: "walk", title: "Evening Walk", detail: "Unwind after work", min: "30 min" },
+      { icon: "🔥", type: "hiit", title: "Sweat Session", detail: "YouTube full body HIIT, go hard", min: "35 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ],
+    hub: [
+      { icon: "🏋️", type: "strength", title: "Push Hypertrophy", detail: "Higher reps, moderate weight", min: "45 min" },
+      { icon: "🏃", type: "cardio", title: "Progression Run", detail: "Start easy, finish strong", min: "35 min" },
+      { icon: "🏋️", type: "strength", title: "Pull Hypertrophy", detail: "Focus on back width", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "Home Circuit", detail: "No gym needed: burpees, push-ups, jumps", min: "30 min" },
+      { icon: "🏋️", type: "strength", title: "Legs & Core", detail: "Lunges, deadlifts, plank holds", min: "50 min" },
+      { icon: "🏃", type: "cardio", title: "Treadmill Challenge", detail: "Hill setting, 30 minutes straight", min: "30 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ]
+  },
+  { title: "Week 6", theme: "Consistent Queens",
+    you: [
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Reformer or best mat class you know", min: "50 min" },
+      { icon: "🔥", type: "hiit", title: "HIIT", detail: "30 min no excuses", min: "30 min" },
+      { icon: "🚶", type: "walk", title: "Walk", detail: "45 min catch up with a friend", min: "45 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Upper body love", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "Cardio Blast", detail: "Skipping, jumping jacks, high knees", min: "25 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Full body feel-good flow", min: "45 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ],
+    hub: [
+      { icon: "🏋️", type: "strength", title: "Strength", detail: "Go heavier than week 5", min: "50 min" },
+      { icon: "🏃", type: "cardio", title: "Run", detail: "Beat your week 5 time", min: "35 min" },
+      { icon: "🏋️", type: "strength", title: "Strength", detail: "Pull day, go heavy", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "HIIT", detail: "Treadmill or circuit", min: "30 min" },
+      { icon: "🏋️", type: "strength", title: "Legs", detail: "Volume up this week", min: "50 min" },
+      { icon: "🏃", type: "cardio", title: "Long Run", detail: "Longest run of the challenge", min: "45 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ]
+  },
+  { title: "Week 7", theme: "Final Stretch",
+    you: [
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Favourite class — treat yourself", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "HIIT + Walk", detail: "20 min HIIT + 20 min walk", min: "40 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Core & glutes focus", min: "45 min" },
+      { icon: "🚶", type: "walk", title: "Walk", detail: "Long one — make it enjoyable", min: "60 min" },
+      { icon: "🔥", type: "hiit", title: "Full Body HIIT", detail: "40 min — penultimate push!", min: "40 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Almost there — make it count", min: "50 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ],
+    hub: [
+      { icon: "🏋️", type: "strength", title: "Strength", detail: "Penultimate heavy week", min: "50 min" },
+      { icon: "🏃", type: "cardio", title: "Run", detail: "Goal: personal best this season", min: "40 min" },
+      { icon: "🏋️", type: "strength", title: "Strength", detail: "Full body compound", min: "50 min" },
+      { icon: "🔥", type: "hiit", title: "HIIT", detail: "Hardest session of the challenge", min: "35 min" },
+      { icon: "🏋️", type: "strength", title: "Legs", detail: "Last heavy leg day!", min: "50 min" },
+      { icon: "🏃", type: "cardio", title: "Run", detail: "Penultimate run — go for it", min: "40 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "Walk together counts!", min: "20 min" },
+    ]
+  },
+  { title: "Week 8", theme: "LEGEND WEEK 🏆",
+    you: [
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Final week — best one yet", min: "50 min" },
+      { icon: "🚶", type: "walk", title: "Walk", detail: "Celebrate how far you've come", min: "45 min" },
+      { icon: "🔥", type: "hiit", title: "HIIT", detail: "Last one — leave it all on the floor!", min: "40 min" },
+      { icon: "🧘", type: "pilates", title: "Pilates", detail: "Victory flow — you earned this", min: "50 min" },
+      { icon: "🚶", type: "walk", title: "Walk", detail: "Final walk of the challenge", min: "30 min" },
+      { icon: "🎉", type: "active-rest", title: "FINALE!", detail: "Stretch, celebrate, watch the finale!", min: "20 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "CHAMPIONS REST!", min: "∞" },
+    ],
+    hub: [
+      { icon: "🏋️", type: "strength", title: "Strength", detail: "Final heavy session", min: "50 min" },
+      { icon: "🏃", type: "cardio", title: "Run", detail: "Last run — make it your best", min: "40 min" },
+      { icon: "🏋️", type: "strength", title: "Full Body", detail: "All compound lifts, celebrate the gains", min: "50 min" },
+      { icon: "🔥", type: "hiit", title: "Last HIIT", detail: "Victory HIIT — go all out!", min: "35 min" },
+      { icon: "🏋️", type: "strength", title: "Pump Session", detail: "Light, fun, feel great for finale", min: "30 min" },
+      { icon: "🎉", type: "active-rest", title: "FINALE!", detail: "Stretch, celebrate, watch the finale!", min: "20 min" },
+      { icon: "🌿", type: "active-rest", title: "REST DAY", detail: "LEGENDS REST!", min: "∞" },
+    ]
+  }
+];
+
+const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+let saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+let state = saved.state || {};
+let name1 = saved.name1 || '';
+let name2 = saved.name2 || '';
+let currentWeek = 0;
+let selectedDay = null;
+
+function persist() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ state, name1, name2 }));
+}
+
+function getKey(week, day) { return `w${week}d${day}`; }
+
+function applyNames() {
+  const n1 = name1 || 'You';
+  const n2 = name2 || 'Partner';
+  document.getElementById('hero-name1').textContent = '💗 ' + n1;
+  document.getElementById('hero-name2').textContent = '💪 ' + n2;
+  document.getElementById('label-you').textContent = n1.toUpperCase() + ' 💗';
+  document.getElementById('label-hub').textContent = n2.toUpperCase() + ' 💪';
+  document.getElementById('btn-you').textContent = '💗 ' + n1;
+  document.getElementById('btn-hub').textContent = '💪 ' + n2;
+  // hide partner badge if solo
+  document.getElementById('hero-name2').style.display = name2 ? '' : 'none';
+  document.getElementById('label-hub').parentElement.style.display = name2 ? '' : 'none';
+}
+
+// Setup screen
+function startChallenge() {
+  const v1 = document.getElementById('setup-name1').value.trim();
+  const v2 = document.getElementById('setup-name2').value.trim();
+  if (!v1) { document.getElementById('setup-name1').focus(); return; }
+  name1 = v1; name2 = v2;
+  persist();
+  launchApp();
+}
+
+function startSolo() {
+  const v1 = document.getElementById('setup-name1').value.trim();
+  name1 = v1 || 'Me'; name2 = '';
+  persist();
+  launchApp();
+}
+
+function launchApp() {
+  document.getElementById('setup-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  applyNames();
+  renderWeekTabs();
+  renderWeek();
+  renderProgress();
+}
+
+// If names already saved, skip setup
+if (name1) {
+  launchApp();
+}
+
+// Edit names
+function openEditNames() {
+  document.getElementById('edit-name1').value = name1;
+  document.getElementById('edit-name2').value = name2;
+  document.getElementById('edit-modal').classList.add('show');
+}
+
+function closeEditModal() {
+  document.getElementById('edit-modal').classList.remove('show');
+}
+
+function saveNames() {
+  const v1 = document.getElementById('edit-name1').value.trim();
+  const v2 = document.getElementById('edit-name2').value.trim();
+  if (!v1) return;
+  name1 = v1; name2 = v2;
+  persist();
+  applyNames();
+  renderWeek();
+  closeEditModal();
+}
+
+// Week rendering
+function renderWeekTabs() {
+  const tabs = document.getElementById('week-tabs');
+  tabs.innerHTML = weeks.map((w, i) => {
+    const allDone = [0,1,2,3,4,5,6].every(d => {
+      const k = getKey(i, d);
+      return state[k] === 'both' || days[d] === 'Sun';
+    });
+    const cls = i === currentWeek ? 'active' : allDone ? 'completed' : '';
+    return `<button class="week-tab ${cls}" onclick="selectWeek(${i})">${w.title}</button>`;
+  }).join('');
+}
+
+function selectWeek(i) {
+  currentWeek = i;
+  renderWeekTabs();
+  renderWeek();
+}
+
+function renderWeek() {
+  const w = weeks[currentWeek];
+  const n1 = name1 || 'You';
+  const n2 = name2 || 'Partner';
+  const content = document.getElementById('week-content');
+
+  const dayCircles = days.map((d, i) => {
+    const k = getKey(currentWeek, i);
+    const val = state[k];
+    const isRest = d === 'Sun';
+    let cls = isRest ? 'rest' : '';
+    let emoji = isRest ? '🌿' : '○';
+    if (val === 'you') { cls = 'you-done'; emoji = '💗'; }
+    if (val === 'hub') { cls = 'hub-done'; emoji = '💪'; }
+    if (val === 'both') { cls = 'both-done'; emoji = '🌴'; }
+    const click = isRest ? '' : `onclick="openModal(${i})"`;
+    return `<div class="day-cell"><div class="day-label">${d}</div><div class="day-circle ${cls}" ${click}>${emoji}</div></div>`;
+  }).join('');
+
+  const youCards = w.you.map((workout, i) => `
+    <div class="workout-card ${workout.type}">
+      <div class="workout-card-icon">${workout.icon}</div>
+      <div class="workout-card-title">${days[i]}: ${workout.title}</div>
+      <div class="workout-card-detail">${workout.detail}</div>
+      <div class="workout-card-min">⏱ ${workout.min}</div>
+    </div>`).join('');
+
+  const hubCards = w.hub.map((workout, i) => `
+    <div class="workout-card ${workout.type}">
+      <div class="workout-card-icon">${workout.icon}</div>
+      <div class="workout-card-title">${days[i]}: ${workout.title}</div>
+      <div class="workout-card-detail">${workout.detail}</div>
+      <div class="workout-card-min">⏱ ${workout.min}</div>
+    </div>`).join('');
+
+  const partnerSection = name2 ? `
+    <div class="week-card">
+      <div class="workouts-title">💪 ${n2}'s Workouts</div>
+      <div class="workout-cards">${hubCards}</div>
+    </div>` : '';
+
+  content.innerHTML = `
+    <div class="week-card">
+      <div class="week-header">
+        <div class="week-title">${w.title}</div>
+        <div class="week-theme">${w.theme}</div>
+      </div>
+      <div class="legend">
+        <span class="legend-item"><span class="legend-dot" style="background:var(--pink)"></span> ${n1} done</span>
+        ${name2 ? `<span class="legend-item"><span class="legend-dot" style="background:var(--teal)"></span> ${n2} done</span>` : ''}
+        <span class="legend-item"><span class="legend-dot" style="background:var(--gold)"></span> Both done 🌴</span>
+        <span style="font-size:12px;color:#aaa">Tap a day to log</span>
+      </div>
+      <div class="days-grid">${dayCircles}</div>
+    </div>
+    <div class="week-card">
+      <div class="workouts-title">💗 ${n1}'s Workouts</div>
+      <div class="workout-cards">${youCards}</div>
+    </div>
+    ${partnerSection}`;
+}
+
+function renderProgress() {
+  let youCount = 0, hubCount = 0, s = 0, streak = 0;
+  const total = 8 * 6;
+  for (let w = 0; w < 8; w++) {
+    for (let d = 0; d < 6; d++) {
+      const val = state[getKey(w, d)];
+      if (val === 'you' || val === 'both') youCount++;
+      if (val === 'hub' || val === 'both') hubCount++;
+      if (val === 'both') { s++; streak = Math.max(streak, s); } else s = 0;
+    }
+  }
+  document.getElementById('bar-you').style.width = (youCount / total * 100) + '%';
+  document.getElementById('bar-hub').style.width = (hubCount / total * 100) + '%';
+  document.getElementById('count-you').textContent = `${youCount} / ${total} workouts`;
+  document.getElementById('count-hub').textContent = `${hubCount} / ${total} workouts`;
+  document.getElementById('streak-count').textContent = `${streak} days`;
+}
+
+function openModal(dayIndex) {
+  selectedDay = dayIndex;
+  document.getElementById('modal-title').textContent = `${days[dayIndex]} — who worked out?`;
+  document.getElementById('modal-subtitle').textContent = "Log your session to unlock tonight's episode!";
+  document.getElementById('modal').classList.add('show');
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('show');
+  selectedDay = null;
+}
+
+function logWorkout(who) {
+  if (selectedDay === null) return;
+  const k = getKey(currentWeek, selectedDay);
+  state[k] = who;
+  persist();
+  closeModal();
+  renderWeek();
+  renderProgress();
+  renderWeekTabs();
+}
+
+document.getElementById('modal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+document.getElementById('edit-modal').addEventListener('click', function(e) { if (e.target === this) closeEditModal(); });
+</script>
+</body>
+</html>
