@@ -9,39 +9,36 @@
 :root{--coral:#FF6B6B;--gold:#FFD93D;--teal:#4ECDC4;--cream:#FFF8F0;--dark:#1a1a2e;--pink:#FF9A9E;--soft:#FFE4E1}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);min-height:100vh}
-
 .setup-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#FF6B6B,#FF9A9E 50%,#FFD93D)}
 .setup-card{background:white;border-radius:24px;padding:40px 36px;max-width:420px;width:100%;text-align:center}
 .setup-palm{font-size:52px;display:block;margin-bottom:12px;animation:sway 3s ease-in-out infinite}
 @keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
 .setup-card h1{font-family:'Playfair Display',serif;font-size:28px;color:var(--dark);line-height:1.2;margin-bottom:6px}
 .setup-card h1 em{color:var(--coral);font-style:italic}
-.setup-card p{font-size:14px;color:#888;margin-bottom:28px;line-height:1.5}
-.setup-field{text-align:left;margin-bottom:16px}
+.setup-card p{font-size:14px;color:#888;margin-bottom:24px;line-height:1.5}
+.setup-field{text-align:left;margin-bottom:14px}
 .setup-field label{display:block;font-size:12px;font-weight:500;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
 .setup-field input{width:100%;padding:12px 16px;border:2px solid #e8e8e8;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--dark);outline:none;transition:border-color .2s;background:white}
 .setup-field input:focus{border-color:var(--coral)}
-.setup-divider{display:flex;align-items:center;gap:12px;margin:8px 0 16px;color:#ccc;font-size:13px}
+.setup-divider{display:flex;align-items:center;gap:12px;margin:6px 0 14px;color:#ccc;font-size:13px}
 .setup-divider::before,.setup-divider::after{content:'';flex:1;height:1px;background:#e8e8e8}
 .setup-btn{width:100%;padding:14px;background:var(--coral);color:white;border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;cursor:pointer;margin-top:8px;transition:background .2s}
 .setup-btn:hover{background:#e05555}
 .setup-solo{background:none;border:2px solid #e8e8e8;color:#888;font-size:14px}
-.setup-solo:hover{background:#f9f9f9;border-color:#ccc}
-
+.setup-solo:hover{background:#f9f9f9}
 .countdown-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#FF6B6B,#FF9A9E 50%,#FFD93D)}
 .countdown-card{background:white;border-radius:24px;padding:40px 36px;max-width:440px;width:100%;text-align:center}
 .countdown-card h1{font-family:'Playfair Display',serif;font-size:26px;color:var(--dark);margin-bottom:6px;line-height:1.3}
 .countdown-card h1 em{font-style:italic;color:var(--coral)}
-.countdown-tagline{font-size:15px;color:#888;margin-bottom:6px;line-height:1.5;font-style:italic}
-.countdown-sub{font-size:13px;color:#aaa;margin-bottom:28px}
-.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px}
+.countdown-tagline{font-size:14px;color:#888;margin-bottom:6px;font-style:italic}
+.countdown-sub{font-size:13px;color:#aaa;margin-bottom:24px}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
 .countdown-unit{background:var(--dark);border-radius:16px;padding:16px 8px}
 .countdown-num{font-size:32px;font-weight:700;color:var(--gold);display:block;line-height:1}
 .countdown-lbl{font-size:10px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;display:block}
-.countdown-names{background:var(--soft);border-radius:14px;padding:16px;margin-bottom:16px;font-size:14px;color:var(--coral);font-weight:500}
-.edit-names-link{font-size:13px;color:var(--coral);cursor:pointer;text-decoration:underline;margin-bottom:16px;display:inline-block}
+.countdown-names{background:var(--soft);border-radius:14px;padding:14px;margin-bottom:14px;font-size:14px;color:var(--coral);font-weight:500}
+.edit-names-link{font-size:13px;color:var(--coral);cursor:pointer;text-decoration:underline;margin-bottom:14px;display:inline-block}
 .prep-tip{background:#f9f9f9;border-radius:12px;padding:14px;font-size:13px;color:#666;line-height:1.6;text-align:left}
-
 #app{display:none}
 .hero{background:linear-gradient(135deg,#FF6B6B,#FF9A9E 40%,#FFD93D);padding:48px 24px 56px;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(255,255,255,.15),transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(255,217,61,.3),transparent 50%)}
@@ -54,18 +51,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .cheat-badge{background:rgba(255,217,61,.25);border:1.5px solid rgba(255,217,61,.5);color:white;padding:5px 14px;border-radius:100px;font-size:14px;cursor:pointer}
 .rule-banner{background:var(--dark);color:var(--gold);text-align:center;padding:14px 24px;font-size:14px;font-weight:500;letter-spacing:.03em}
 .rule-banner strong{color:white}
-
-/* TEXT banner */
-.text-banner{background:var(--dark);margin:0;padding:16px 20px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;border-bottom:2px solid var(--gold)}
+.text-banner{background:var(--dark);padding:16px 20px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;border-bottom:2px solid var(--gold)}
 .text-banner-phone{font-size:28px;flex-shrink:0;animation:buzz .3s ease infinite alternate}
 @keyframes buzz{0%{transform:rotate(-8deg)}100%{transform:rotate(8deg)}}
 .text-banner-body{flex:1}
 .text-banner-title{color:var(--gold);font-weight:700;font-size:14px;letter-spacing:.05em;margin-bottom:4px}
 .text-banner-msg{color:white;font-size:13px;line-height:1.5}
 .text-banner-tap{color:rgba(255,255,255,.5);font-size:11px;margin-top:4px}
-
-.container{max-width:900px;margin:0 auto;padding:32px 20px 60px}
-.week-tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:28px;scrollbar-width:none}
+.nav-tabs{display:flex;background:white;border-bottom:2px solid #f0f0f0;overflow-x:auto;scrollbar-width:none}
+.nav-tabs::-webkit-scrollbar{display:none}
+.nav-tab{flex:1;min-width:80px;padding:14px 8px;text-align:center;font-size:12px;font-weight:500;color:#999;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
+.nav-tab.active{color:var(--coral);border-bottom-color:var(--coral)}
+.container{max-width:900px;margin:0 auto;padding:24px 20px 60px}
+.week-tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:24px;scrollbar-width:none}
 .week-tabs::-webkit-scrollbar{display:none}
 .week-tab{flex-shrink:0;padding:8px 16px;border-radius:100px;border:2px solid #e0e0e0;background:white;cursor:pointer;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;transition:all .2s;color:#666}
 .week-tab:hover{border-color:var(--coral);color:var(--coral)}
@@ -85,24 +83,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .day-circle.hub-done{border-color:#4ECDC4;background:#e8fafa}
 .day-circle.both-done{border-color:var(--gold);background:#fff9e0;animation:glow 1s ease}
 .day-circle.cheat-used{border-color:#a855f7;background:#f3e8ff}
-.day-circle.bombshell-done{border-color:#FF6B6B;background:#ffe0e0}
 .day-circle.rest{background:#f5f5f5;border-color:#e0e0e0;cursor:default}
 @keyframes glow{0%{box-shadow:0 0 0 0 rgba(255,217,61,.5)}70%{box-shadow:0 0 0 10px rgba(255,217,61,0)}100%{box-shadow:0 0 0 0 rgba(255,217,61,0)}}
 .day-log-detail{font-size:9px;color:#999;margin-top:2px;text-align:center}
-.workout-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.workout-card{border-radius:14px;padding:16px;border:2px solid transparent}
+.workout-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.workout-card{border-radius:14px;padding:14px;border:2px solid transparent}
 .workout-card.pilates{background:linear-gradient(135deg,#ffe4f0,#ffd1e8);border-color:#ffb3d1}
 .workout-card.strength{background:linear-gradient(135deg,#e0f0ff,#d1e8ff);border-color:#a8d4ff}
 .workout-card.cardio{background:linear-gradient(135deg,#fff3d4,#ffe8a8);border-color:#ffd166}
 .workout-card.active-rest{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-color:#a5d6a7}
 .workout-card.hiit{background:linear-gradient(135deg,#fce4ec,#f8bbd0);border-color:#f48fb1}
 .workout-card.walk{background:linear-gradient(135deg,#e8eaf6,#c5cae9);border-color:#9fa8da}
-.workout-card.bombshell{background:linear-gradient(135deg,#fff0e0,#ffd9b0);border-color:#ffb347;border-width:2px}
-.workout-card-icon{font-size:22px;margin-bottom:6px}
-.workout-card-title{font-weight:600;font-size:14px;margin-bottom:2px}
-.workout-card-detail{font-size:12px;color:#555;line-height:1.4}
-.workout-card-min{font-size:11px;color:#888;margin-top:4px}
-.legend{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+.workout-card.bombshell{background:linear-gradient(135deg,#fff0e0,#ffd9b0);border-color:#ffb347;cursor:pointer}
+.workout-card-icon{font-size:20px;margin-bottom:5px}
+.workout-card-title{font-weight:600;font-size:13px;margin-bottom:2px}
+.workout-card-detail{font-size:11px;color:#555;line-height:1.4}
+.workout-card-min{font-size:10px;color:#888;margin-top:3px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
 .legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#666}
 .legend-dot{width:12px;height:12px;border-radius:50%}
 .progress-section{background:white;border-radius:20px;padding:24px 28px;box-shadow:0 4px 24px rgba(0,0,0,.07);margin-bottom:20px}
@@ -127,7 +124,24 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .rule-list li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;line-height:1.5;color:rgba(255,255,255,.85)}
 .rule-list li:last-child{border-bottom:none}
 .rule-list li .rule-icon{font-size:18px;flex-shrink:0}
-
+/* Leaderboard */
+.lb-loading{text-align:center;padding:40px;color:#aaa;font-size:14px}
+.lb-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:.5px solid #f0f0f0}
+.lb-row:last-child{border-bottom:none}
+.lb-rank{font-size:20px;font-weight:700;width:32px;text-align:center;flex-shrink:0}
+.lb-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0}
+.lb-names{flex:1;min-width:0}
+.lb-name{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb-sub{font-size:11px;color:#aaa;margin-top:2px}
+.lb-pts{text-align:right;flex-shrink:0}
+.lb-pts-num{font-size:18px;font-weight:700;color:var(--coral)}
+.lb-pts-lbl{font-size:10px;color:#aaa}
+.lb-bar-bg{background:#f0f0f0;border-radius:100px;height:4px;margin-top:4px;overflow:hidden}
+.lb-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--pink),var(--coral));transition:width .6s ease}
+.pts-explainer{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.pts-box{background:var(--soft);border-radius:12px;padding:12px;text-align:center}
+.pts-num{font-size:22px;font-weight:700;color:var(--coral)}
+.pts-lbl{font-size:11px;color:#888;margin-top:2px}
 /* Modals */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:100;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px}
 .modal-overlay.show{opacity:1;pointer-events:all}
@@ -171,8 +185,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .edit-btns button{flex:1;padding:11px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;border:2px solid #e0e0e0;background:white;color:#666}
 .edit-btns .save-btn{background:var(--coral);border-color:var(--coral);color:white}
 .workouts-title{font-size:13px;font-weight:500;color:#999;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
-
-/* Celebrate flash */
 .celebrate-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px}
 .celebrate-overlay.show{opacity:1;pointer-events:all}
 .celebrate-card{background:var(--dark);border-radius:24px;padding:32px;text-align:center;max-width:340px;width:100%;border:2px solid var(--gold)}
@@ -180,49 +192,44 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .celebrate-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold);margin-bottom:10px}
 .celebrate-msg{font-size:14px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:20px;font-style:italic}
 .celebrate-close{background:var(--coral);color:white;border:none;padding:12px 28px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;cursor:pointer}
-
-/* Recap modal */
 .recap-card{background:var(--dark);border-radius:20px;padding:20px;margin-bottom:14px;text-align:left}
 .recap-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin-bottom:14px;text-align:center}
 .recap-stat{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(255,255,255,.85)}
 .recap-stat:last-child{border-bottom:none}
 .recap-stat-val{color:var(--gold);font-weight:700;font-size:15px}
 .recap-narration{background:rgba(255,255,255,.05);border-radius:12px;padding:14px;margin-top:12px;font-size:13px;color:rgba(255,255,255,.9);line-height:1.7;font-style:italic;text-align:center}
-
-/* Bombshell modal */
 .bombshell-modal{background:var(--dark);border:2px solid var(--gold)}
 .bombshell-modal h2{color:var(--gold)}
 .bombshell-modal p{color:rgba(255,255,255,.8)}
 .bombshell-card{background:rgba(255,255,255,.08);border-radius:14px;padding:16px;margin:12px 0;text-align:left}
-.bombshell-card .bc-title{font-size:16px;font-weight:600;color:var(--gold);margin-bottom:6px}
-.bombshell-card .bc-detail{font-size:13px;color:rgba(255,255,255,.8);line-height:1.5}
-.bombshell-card .bc-time{font-size:12px;color:rgba(255,255,255,.5);margin-top:6px}
+.bc-title{font-size:16px;font-weight:600;color:var(--gold);margin-bottom:6px}
+.bc-detail{font-size:13px;color:rgba(255,255,255,.8);line-height:1.5}
+.bc-time{font-size:12px;color:rgba(255,255,255,.5);margin-top:6px}
+.sync-status{text-align:center;font-size:11px;color:#aaa;padding:8px;min-height:24px}
 </style>
 </head>
 <body>
 
-<!-- Setup -->
 <div class="setup-screen" id="setup-screen">
   <div class="setup-card">
     <span class="setup-palm">🌴</span>
     <h1>Love Island <em>Fitness</em> Challenge</h1>
-    <p>8 weeks · No workout = No episode<br>Enter your names to get started 💪</p>
+    <p>8 weeks · No workout = No episode<br>Enter your names to join the villa 💪</p>
     <div class="setup-field"><label>Your name</label><input type="text" id="setup-name1" placeholder="e.g. Emma" maxlength="20"></div>
     <div class="setup-divider">+ partner</div>
     <div class="setup-field"><label>Partner's name</label><input type="text" id="setup-name2" placeholder="e.g. Jake" maxlength="20"></div>
-    <div class="setup-field"><label>Team name (optional)</label><input type="text" id="setup-team" placeholder="e.g. Team Chaos" maxlength="30"></div>
-    <button class="setup-btn" onclick="startChallenge()">Let's go! 🌴</button>
+    <div class="setup-field"><label>Team name</label><input type="text" id="setup-team" placeholder="e.g. Team Chaos" maxlength="30"></div>
+    <button class="setup-btn" onclick="startChallenge()">Enter the villa! 🌴</button>
     <button class="setup-btn setup-solo" onclick="startSolo()">Just me for now</button>
   </div>
 </div>
 
-<!-- Countdown -->
 <div class="countdown-screen" id="countdown-screen" style="display:none">
   <div class="countdown-card">
     <span class="setup-palm">🌴</span>
     <h1>The villa is <em>not</em> open yet.</h1>
     <p class="countdown-tagline">"No one's coupling up until everyone's warmed up."</p>
-    <p class="countdown-sub">Challenge officially kicks off Monday 8th June</p>
+    <p class="countdown-sub">Challenge kicks off Monday 8th June — get your team ready</p>
     <div class="countdown-grid">
       <div class="countdown-unit"><span class="countdown-num" id="cd-days">0</span><span class="countdown-lbl">Days</span></div>
       <div class="countdown-unit"><span class="countdown-num" id="cd-hours">0</span><span class="countdown-lbl">Hours</span></div>
@@ -231,11 +238,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
     </div>
     <div class="countdown-names" id="countdown-names"></div>
     <span class="edit-names-link" onclick="goBackToSetup()">✏️ Edit names</span>
-    <div class="prep-tip"><strong>This week — get ready:</strong><br>Share this with your crew, get everyone set up and mentally prepare. The sweating starts Monday. 💪</div>
+    <div class="prep-tip"><strong>This week — get ready:</strong><br>Share this link with your friends, get everyone signed up, pick your workouts and mentally prepare. The sweating starts Monday. 💪</div>
   </div>
 </div>
 
-<!-- App -->
 <div id="app">
   <div class="hero">
     <span class="hero-emoji">🌴</span>
@@ -249,7 +255,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
   </div>
   <div class="rule-banner">🔒 <strong>The Golden Rule:</strong> Both must complete their workout to unlock tonight's episode. No excuses!</div>
   <div id="text-banner-slot"></div>
-  <div class="container">
+  <div class="nav-tabs">
+    <div class="nav-tab active" onclick="switchNav('tracker',this)">📅 My Tracker</div>
+    <div class="nav-tab" onclick="switchNav('leaderboard',this)">🏆 Leaderboard</div>
+    <div class="nav-tab" onclick="switchNav('rules',this)">📋 Rules</div>
+  </div>
+  <div class="sync-status" id="sync-status"></div>
+  <div id="nav-tracker" class="container">
     <div class="progress-section">
       <div class="progress-title">🏆 Your Progress</div>
       <div class="progress-people">
@@ -266,36 +278,46 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
       </div>
       <div class="streak-box">
         <span style="font-size:28px">🔥</span>
-        <div><div class="streak-count" id="streak-count">0 days</div><div class="streak-text">Current both-done streak</div></div>
+        <div><div class="streak-count" id="streak-count">0 days</div><div class="streak-text">Best both-done streak</div></div>
       </div>
       <div style="height:10px"></div>
       <div class="cheat-box" onclick="openCheatInfo()">
         <span style="font-size:28px">🎟️</span>
-        <div>
-          <div class="cheat-count" id="cheat-earned-display">0 / 3 earned</div>
-          <div class="cheat-text">Cheat days</div>
-          <div class="cheat-sub" id="cheat-used-display">0 used · 0 remaining</div>
-        </div>
+        <div><div class="cheat-count" id="cheat-earned-display">0 / 3 earned</div><div class="cheat-text">Cheat days</div><div class="cheat-sub" id="cheat-used-display">0 used · 0 remaining</div></div>
       </div>
     </div>
+    <div class="week-tabs" id="week-tabs"></div>
+    <div id="week-content"></div>
+  </div>
+  <div id="nav-leaderboard" class="container" style="display:none">
+    <div class="week-card">
+      <div class="progress-title" style="margin-bottom:6px">🏆 Villa Leaderboard</div>
+      <p style="font-size:13px;color:#aaa;margin-bottom:20px">+1 per person who works out · +3 bonus when both done same day</p>
+      <div id="lb-content"><div class="lb-loading">Loading the villa... 🌴</div></div>
+      <div class="pts-explainer">
+        <div class="pts-box"><div class="pts-num">+1</div><div class="pts-lbl">per person per day</div></div>
+        <div class="pts-box"><div class="pts-num">+3</div><div class="pts-lbl">bonus both done</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="nav-rules" class="container" style="display:none">
     <div class="rules-section">
       <div class="rules-title">📋 Challenge Rules</div>
       <ul class="rule-list">
         <li><span class="rule-icon">🔒</span>Both of you must complete your daily workout before watching Love Island — no exceptions.</li>
         <li><span class="rule-icon">⏱️</span>Minimum 20 minutes counts. Goal is 45 minutes. Rest days are your gift — use them!</li>
-        <li><span class="rule-icon">🔄</span>Each week has a theme. Log what you actually did — pick a type, duration and effort rating.</li>
+        <li><span class="rule-icon">🔄</span>Each week has a theme. Log what you actually did — pick a type, duration and effort.</li>
         <li><span class="rule-icon">🌴</span>Sundays are active rest — a walk together counts as both your workouts.</li>
         <li><span class="rule-icon">📱</span>Bombshell challenges drop mid-week — complete both for bonus bragging rights.</li>
         <li><span class="rule-icon">🎟️</span>Every 6 consecutive both-done days earns 1 cheat day. Max 3 total.</li>
+        <li><span class="rule-icon">🏆</span>Leaderboard: +1 per person per day, +3 bonus when both done same day.</li>
         <li><span class="rule-icon">🎯</span>Complete 6+ weeks = Season Champions. Complete all 8 = Love Island Legends! 🏆</li>
       </ul>
     </div>
-    <div class="week-tabs" id="week-tabs"></div>
-    <div id="week-content"></div>
   </div>
 </div>
 
-<!-- Log workout modal -->
+<!-- Log modal -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <div style="font-size:32px">💪</div>
@@ -341,7 +363,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
   </div>
 </div>
 
-<!-- Cheat day info -->
+<!-- Cheat info -->
 <div class="modal-overlay" id="cheat-modal">
   <div class="modal">
     <div style="font-size:36px">🎟️</div>
@@ -351,17 +373,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
   </div>
 </div>
 
-<!-- Celebrate flash -->
+<!-- Celebrate -->
 <div class="celebrate-overlay" id="celebrate-overlay" onclick="this.classList.remove('show')">
   <div class="celebrate-card">
     <span class="celebrate-emoji" id="cel-emoji">🌴</span>
     <div class="celebrate-title" id="cel-title">Both done!</div>
-    <div class="celebrate-msg" id="cel-msg">Amazing!</div>
+    <div class="celebrate-msg" id="cel-msg"></div>
     <button class="celebrate-close" onclick="document.getElementById('celebrate-overlay').classList.remove('show')">Mint, that! 🌴</button>
   </div>
 </div>
 
-<!-- Week recap modal -->
+<!-- Recap -->
 <div class="modal-overlay" id="recap-modal">
   <div class="modal" style="max-width:420px">
     <div id="recap-content"></div>
@@ -369,49 +391,57 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
   </div>
 </div>
 
-<!-- Bombshell modal -->
+<!-- Bombshell -->
 <div class="modal-overlay" id="bombshell-modal">
   <div class="modal bombshell-modal">
     <div style="font-size:42px;animation:buzz .3s ease infinite alternate">📱</div>
     <h2>YOU'VE GOT A TEXT!</h2>
     <p>A bombshell challenge has just entered the villa...</p>
     <div class="bombshell-card" id="bombshell-content"></div>
-    <div style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 16px">Log it as a bonus when you complete your normal workout this week</div>
+    <div style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 16px">Log it as a bonus on top of your normal workout this week</div>
     <button class="modal-save-btn" onclick="document.getElementById('bombshell-modal').classList.remove('show')" style="background:var(--gold);color:var(--dark)">I'm on it! 💪</button>
     <button class="modal-cancel-btn" style="color:rgba(255,255,255,.5);border-color:rgba(255,255,255,.2)" onclick="document.getElementById('bombshell-modal').classList.remove('show')">Maybe later</button>
   </div>
 </div>
 
 <script>
-const SKEY='lifc_v5';
+const BIN_ID='6a1f81f2f5f4af5e29affe14';
+const API_KEY='$2a$10$HgaGaVP415wlNMAUe1OoZOP7nX.moNf6M1ntJ4Wt.i.B1OIlTmbiy';
+const BIN_URL='https://api.jsonbin.io/v3/b/'+BIN_ID;
+const LKEY='lifc_local_v5';
 const START_DATE=new Date('2025-06-08T00:00:00');
 
 const IAIN_LINES=[
   "She's a fit bird and he's punching. Both done though — the villa is FUMING. 🌴",
   "I've got a text! ...it says these two actually got off the sofa. Unprecedented scenes.",
-  "Straight out of the beach hut and straight into a sweat. No one is safe.",
+  "Straight out of the beach hut and straight into a sweat. No one in the villa is safe.",
   "The other couples are doing bits. These two are doing SETS.",
   "She came here to find love. She found gains instead. Same thing really.",
   "He's not my type on paper but his squat form? Immaculate.",
-  "Casa Amor couldn't tempt them. Neither could the sofa. Absolute legends.",
+  "Casa Amor couldn't tempt them. Neither could the sofa. Absolute legends of the villa.",
   "Pull her for a chat? They pulled for a full 45 minutes. Respect.",
-  "Muggy? No. Buff? Absolutely. Both done.",
+  "Muggy? No. Buff? Absolutely. Both done. The villa applauds.",
   "The boys are grafting. The girls are grafting harder. Everyone's sweating. This is Love Island.",
   "As Iain once said — actually Iain's crying. These two are unreal.",
-  "She's got a banging personality and a banging workout. He's keeping up. Just.",
+  "She's got a banging personality and a banging workout routine. He's keeping up. Just.",
   "I didn't think they had it in them. I was wrong. The villa is shook.",
   "That's not just a workout. That's a STATEMENT. The other Islanders are shaking.",
-  "Both done. On the same day. I'm not crying, you're crying.",
+  "Both done. On the same day. In the same week. I'm not crying, you're crying.",
   "She's fit, he's fit, they're both well fit — and they've both done their workout. Villa royalty.",
-  "He put in a shift. She put in a SHIFT. They're basically running the villa.",
-  "Recoupling? More like re-squatting. These two are not going anywhere.",
-  "Grafting level: elite. Sofa-sitting level: zero. This is how you do it.",
+  "He put in a shift. She put in a SHIFT. They're basically running the villa now.",
+  "Recoupling? More like re-squatting. These two are going nowhere.",
+  "Grafting level: elite. Sofa-sitting level: zero. This is how you stay in the villa.",
   "They've done the work, they've earned the episode. That's the deal. That's Love Island Fitness.",
-  "Some Islanders talk a good game. These two play one. Both done. 🌴",
+  "Some Islanders talk a good game. These two actually play one. Both done. 🌴",
   "She's cracking on and cracking sets. He's not mugging her off tonight.",
   "The public would 100% keep these two in. Deserve to be here.",
   "Head's not been turned. Neither have they skipped a session. Loyal to the villa and to the gains.",
   "Mint. Absolutely mint. Both done, no drama, no excuses. This is the dream couple.",
+  "She said she was here for the right reasons. Turns out the right reasons are lunges.",
+  "He's been grafting since day one. She's been grafting since day one. The sofa has never felt so judgy.",
+  "The villa just got a glow up. These two are undefeated.",
+  "Not my type on paper. But their commitment to not watching Love Island from the sofa? Chef's kiss.",
+  "I've seen a lot of things in this villa. But two people actually doing their workout? Still gets me every time.",
 ];
 
 const BOMBSHELL_CHALLENGES=[
@@ -422,14 +452,14 @@ const BOMBSHELL_CHALLENGES=[
   {title:"The Love Island Games",detail:"Three events: 400m sprint (or 5 min max effort cardio), 50 sit-ups, 50 squats. Time yourself. Shame the slow ones later.",time:"20 min"},
   {title:"The Dumped Warning",detail:"Word in the villa is someone's getting dumped for slacking. 45 min solid workout — your choice — but it has to hurt a bit.",time:"45 min"},
   {title:"The Lie Detector",detail:"You can lie in the villa. You cannot lie to your body. 10 min HIIT, 10 min strength, 10 min stretch. No skipping sections.",time:"30 min"},
-  {title:"The Casa Cardio",detail:"Casa Amor just showed up and they're all in great shape. Respond accordingly: 40 min cardio, any style, go harder than normal.",time:"40 min"},
+  {title:"Casa Cardio",detail:"Casa Amor just showed up and they're all in great shape. Respond accordingly: 40 min cardio, any style, go harder than normal.",time:"40 min"},
 ];
 
 const WEEK_RECAPS=[
   "Week one in the villa and things are already spicy. Habits are forming, excuses are being left at the door, and the sofa is starting to feel judgy.",
   "The Islanders turned it up this week. Someone's been going harder than expected. Someone else is still finding their feet. The drama is just beginning.",
   "Week three and the sweat is real. Friendships are being tested by rest days. Romances are being built in the gym. Glow up incoming.",
-  "Halfway through the villa and things are getting serious. The strong couples are pulling away. The waverers need a word from Iain.",
+  "Halfway through the villa and things are getting serious. The strong couples are pulling away. The waverers need a word with Iain.",
   "Second wind? More like second wind, third wind, and a cheeky extra set. Week five is where legends are made.",
   "Consistent queens. Consistent kings. This is the week the real Islanders showed up and the sofa stayed cold.",
   "Final stretch. The end is in sight. Every session counts double now. The recoupling is coming.",
@@ -440,6 +470,11 @@ const WTYPES=[
   {id:'pilates',icon:'🧘',label:'Pilates'},{id:'hiit',icon:'🔥',label:'HIIT'},{id:'walk',icon:'🚶',label:'Walk'},
   {id:'strength',icon:'🏋️',label:'Strength'},{id:'run',icon:'🏃',label:'Run'},{id:'cycle',icon:'🚴',label:'Cycle'},
   {id:'swim',icon:'🏊',label:'Swim'},{id:'yoga',icon:'🧘',label:'Yoga'},{id:'sport',icon:'🏸',label:'Sport'},{id:'other',icon:'⚡',label:'Other'},
+];
+
+const AV_COLORS=[
+  {bg:'#FFE4E1',color:'#c0392b'},{bg:'#e8fafa',color:'#0e7a70'},{bg:'#fff9e0',color:'#7a5800'},
+  {bg:'#EEEDFE',color:'#3C3489'},{bg:'#EAF3DE',color:'#27500A'},{bg:'#FAEEDA',color:'#633806'},
 ];
 
 const weeks=[
@@ -454,37 +489,53 @@ const weeks=[
 ];
 
 const DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-let saved=JSON.parse(localStorage.getItem(SKEY)||'{}');
-let state=saved.state||{};
-let name1=saved.name1||'';
-let name2=saved.name2||'';
-let teamName=saved.teamName||'';
-let usedIainLines=saved.usedIainLines||[];
+let local=JSON.parse(localStorage.getItem(LKEY)||'{}');
+let state=local.state||{};
+let name1=local.name1||'';
+let name2=local.name2||'';
+let teamName=local.teamName||'';
+let teamId=local.teamId||'';
+let usedLines=local.usedLines||[];
 let currentWeek=0;
 let selectedDay=null;
 let selP1Type='',selP2Type='',selP1Effort=0,selP2Effort=0,whoSelected='';
+let remoteData=null;
 
-function persist(){localStorage.setItem(SKEY,JSON.stringify({state,name1,name2,teamName,usedIainLines}))}
+function saveLocal(){localStorage.setItem(LKEY,JSON.stringify({state,name1,name2,teamName,teamId,usedLines}))}
 function gk(w,d){return 'w'+w+'d'+d}
-
-function getBombshellForWeek(weekIdx){
-  // deterministic per week, seeded by week index
-  return BOMBSHELL_CHALLENGES[weekIdx % BOMBSHELL_CHALLENGES.length];
-}
-
-function getBombshellRevealDay(weekIdx){
-  // Reveal on Wed (day index 2) of each week
-  return 2;
-}
-
-function isBombshellRevealed(weekIdx){
-  const now=new Date();
-  const challengeStart=new Date(START_DATE);
-  challengeStart.setDate(challengeStart.getDate()+(weekIdx*7)+getBombshellRevealDay(weekIdx));
-  return now>=challengeStart;
-}
-
 function isChallengeStarted(){return new Date()>=START_DATE}
+
+// JSONBin helpers
+async function fetchRemote(){
+  try{
+    const r=await fetch(BIN_URL+'/latest',{headers:{'X-Master-Key':API_KEY}});
+    const j=await r.json();
+    remoteData=j.record||{teams:[]};
+    return remoteData;
+  }catch(e){return remoteData||{teams:[]}}
+}
+
+async function pushRemote(data){
+  try{
+    await fetch(BIN_URL,{method:'PUT',headers:{'Content-Type':'application/json','X-Master-Key':API_KEY},body:JSON.stringify(data)});
+  }catch(e){}
+}
+
+function setSyncStatus(msg){document.getElementById('sync-status').textContent=msg}
+
+function calcTeamPoints(teamState,hasP2){
+  let pts=0,streak=0,maxStreak=0,bothDays=0;
+  for(let w=0;w<8;w++)for(let d=0;d<6;d++){
+    const v=teamState[gk(w,d)];
+    const who=v?v.who:'';
+    if(who==='you')pts+=1;
+    else if(who==='hub'&&hasP2)pts+=1;
+    else if(who==='both'){pts+=hasP2?5:1;streak++;maxStreak=Math.max(maxStreak,streak);bothDays++;}
+    else if(who==='cheat'){streak++;maxStreak=Math.max(maxStreak,streak);}
+    else streak=0;
+  }
+  return{pts,streak:maxStreak,bothDays};
+}
 
 function calcCheatDays(){
   let cons=0,earned=0,used=0;
@@ -516,61 +567,31 @@ function calcCurrentCons(){
   return s;
 }
 
+function isWeekComplete(wi){
+  return [0,1,2,3,4,5].every(d=>{const v=state[gk(wi,d)];return v&&(v.who==='both'||v.who==='cheat');});
+}
+
 function getRandomIain(){
-  let available=IAIN_LINES.filter((_,i)=>!usedIainLines.includes(i));
-  if(!available.length){usedIainLines=[];available=IAIN_LINES;}
-  const idx=IAIN_LINES.indexOf(available[Math.floor(Math.random()*available.length)]);
-  usedIainLines.push(idx);
-  persist();
+  let avail=IAIN_LINES.filter((_,i)=>!usedLines.includes(i));
+  if(!avail.length){usedLines=[];avail=IAIN_LINES;}
+  const idx=IAIN_LINES.indexOf(avail[Math.floor(Math.random()*avail.length)]);
+  usedLines.push(idx);saveLocal();
   return IAIN_LINES[idx];
+}
+
+function getBombshellForWeek(wi){return BOMBSHELL_CHALLENGES[wi%BOMBSHELL_CHALLENGES.length]}
+function isBombshellRevealed(wi){
+  const d=new Date(START_DATE);d.setDate(d.getDate()+(wi*7)+2);
+  return new Date()>=d;
 }
 
 function showCelebrate(who){
   const emojis={you:'💗',hub:'💪',both:'🌴',cheat:'🎟️'};
-  const titles={you:'She did it!',hub:'He did it!',both:'Both done!',cheat:'Cheat day used!'};
+  const titles={you:'She did it!',hub:'He did it!',both:'Both done!',cheat:'Cheat day!'};
   document.getElementById('cel-emoji').textContent=emojis[who]||'🌴';
   document.getElementById('cel-title').textContent=titles[who]||'Done!';
-  const msg=who==='both'||who==='cheat'?getRandomIain():'Workout logged. Now drag your partner off the sofa. 👀';
-  document.getElementById('cel-msg').textContent=msg;
+  document.getElementById('cel-msg').textContent=(who==='both'||who==='cheat')?getRandomIain():'Workout logged. Now drag your partner off the sofa. 👀';
   document.getElementById('celebrate-overlay').classList.add('show');
-}
-
-function isWeekComplete(weekIdx){
-  return [0,1,2,3,4,5].every(d=>{
-    const v=state[gk(weekIdx,d)];
-    return v&&(v.who==='both'||v.who==='cheat');
-  });
-}
-
-function showWeekRecap(weekIdx){
-  const n1=name1||'You',n2=name2||'Partner';
-  let totalMins=0,beastCount=0,bothDays=0,topType={};
-  const effortLabels=['','😌 Easy','💪 Solid','🔥 Beast'];
-  for(let d=0;d<6;d++){
-    const e=state[gk(weekIdx,d)];
-    if(!e)continue;
-    if(e.who==='both'||e.who==='cheat')bothDays++;
-    if(e.p1duration)totalMins+=parseInt(e.p1duration)||0;
-    if(e.p2duration)totalMins+=parseInt(e.p2duration)||0;
-    if(e.p1effort===3||e.p2effort===3)beastCount++;
-    if(e.p1type)topType[e.p1type]=(topType[e.p1type]||0)+1;
-    if(e.p2type)topType[e.p2type]=(topType[e.p2type]||0)+1;
-  }
-  const topWorkout=Object.entries(topType).sort((a,b)=>b[1]-a[1])[0];
-  const topWt=topWorkout?WTYPES.find(t=>t.id===topWorkout[0]):null;
-  const narration=WEEK_RECAPS[weekIdx]||'Another week done in the villa. The gains are real.';
-  const bombshell=getBombshellForWeek(weekIdx);
-
-  document.getElementById('recap-content').innerHTML=
-    '<div class="recap-card">'+
-    '<div class="recap-title">Week '+(weekIdx+1)+' Recap 🌴</div>'+
-    '<div class="recap-stat"><span>Both-done days</span><span class="recap-stat-val">'+bothDays+' / 6</span></div>'+
-    '<div class="recap-stat"><span>Total minutes sweated</span><span class="recap-stat-val">'+(totalMins||'?')+'</span></div>'+
-    '<div class="recap-stat"><span>Beast mode moments</span><span class="recap-stat-val">'+beastCount+'</span></div>'+
-    (topWt?'<div class="recap-stat"><span>Most popular workout</span><span class="recap-stat-val">'+topWt.icon+' '+topWt.label+'</span></div>':'')+
-    '<div class="recap-narration">"'+narration+'"<br><br>— Iain Sterling, probably</div>'+
-    '</div>';
-  document.getElementById('recap-modal').classList.add('show');
 }
 
 function applyNames(){
@@ -580,11 +601,7 @@ function applyNames(){
   document.getElementById('who-you-label').textContent=n1;
   const hasP2=!!name2;
   document.getElementById('hero-name2').style.display=hasP2?'':'none';
-  if(hasP2){
-    document.getElementById('hero-name2').textContent='💪 '+n2;
-    document.getElementById('label-hub').textContent=n2.toUpperCase()+' 💪';
-    document.getElementById('who-hub-label').textContent=n2;
-  }
+  if(hasP2){document.getElementById('hero-name2').textContent='💪 '+n2;document.getElementById('label-hub').textContent=n2.toUpperCase()+' 💪';document.getElementById('who-hub-label').textContent=n2;}
   document.getElementById('who-hub-btn').style.display=hasP2?'':'none';
   document.getElementById('who-both-btn').style.display=hasP2?'':'none';
   document.getElementById('label-hub').parentElement.style.display=hasP2?'':'none';
@@ -603,34 +620,63 @@ function updateCheatDisplay(){
 
 function renderTextBanner(){
   const slot=document.getElementById('text-banner-slot');
-  // Find current week's bombshell
-  const now=new Date();
-  let activeBombshell=null;
-  let activeBombshellWeek=-1;
-  for(let w=0;w<8;w++){
-    if(isBombshellRevealed(w)){activeBombshell=getBombshellForWeek(w);activeBombshellWeek=w;}
-  }
-  if(!activeBombshell){slot.innerHTML='';return;}
-  const b=activeBombshell;
-  slot.innerHTML='<div class="text-banner" onclick="openBombshellModal()">'+
-    '<div class="text-banner-phone">📱</div>'+
-    '<div class="text-banner-body">'+
-    '<div class="text-banner-title">YOU\'VE GOT A TEXT!</div>'+
-    '<div class="text-banner-msg">Week '+(activeBombshellWeek+1)+' Bombshell: <strong>'+b.title+'</strong> has entered the villa...</div>'+
-    '<div class="text-banner-tap">Tap to see the challenge</div>'+
-    '</div></div>';
+  let b=null,bw=-1;
+  for(let w=0;w<8;w++){if(isBombshellRevealed(w)){b=getBombshellForWeek(w);bw=w;}}
+  if(!b){slot.innerHTML='';return;}
+  slot.innerHTML='<div class="text-banner" onclick="openBombshellModal()"><div class="text-banner-phone">📱</div><div class="text-banner-body"><div class="text-banner-title">YOU\'VE GOT A TEXT!</div><div class="text-banner-msg">Week '+(bw+1)+' Bombshell: <strong>'+b.title+'</strong> has entered the villa...</div><div class="text-banner-tap">Tap to see the challenge</div></div></div>';
 }
 
 function openBombshellModal(){
-  let activeBombshell=null,activeBombshellWeek=-1;
-  for(let w=0;w<8;w++){if(isBombshellRevealed(w)){activeBombshell=getBombshellForWeek(w);activeBombshellWeek=w;}}
-  if(!activeBombshell)return;
-  const b=activeBombshell;
-  document.getElementById('bombshell-content').innerHTML=
-    '<div class="bc-title">💥 '+b.title+'</div>'+
-    '<div class="bc-detail">'+b.detail+'</div>'+
-    '<div class="bc-time">⏱ '+b.time+'</div>';
+  let b=null,bw=-1;
+  for(let w=0;w<8;w++){if(isBombshellRevealed(w)){b=getBombshellForWeek(w);bw=w;}}
+  if(!b)return;
+  document.getElementById('bombshell-content').innerHTML='<div class="bc-title">💥 '+b.title+'</div><div class="bc-detail">'+b.detail+'</div><div class="bc-time">⏱ '+b.time+'</div>';
   document.getElementById('bombshell-modal').classList.add('show');
+}
+
+function switchNav(tab,el){
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  ['tracker','leaderboard','rules'].forEach(t=>document.getElementById('nav-'+t).style.display=t===tab?'block':'none');
+  if(tab==='leaderboard')renderLeaderboard();
+}
+
+async function renderLeaderboard(){
+  const el=document.getElementById('lb-content');
+  el.innerHTML='<div class="lb-loading">Loading the villa... 🌴</div>';
+  const data=await fetchRemote();
+  if(!data.teams||!data.teams.length){el.innerHTML='<div class="lb-loading">No teams yet — be the first to join! 🌴</div>';return;}
+  const ranked=data.teams.map(t=>({...t,...calcTeamPoints(t.state||{},!!t.name2)})).sort((a,b)=>b.pts-a.pts);
+  const maxPts=ranked[0]?.pts||1;
+  const rankEmojis=['🥇','🥈','🥉'];
+  el.innerHTML=ranked.map((t,i)=>{
+    const av=AV_COLORS[i%AV_COLORS.length];
+    const initials=(t.name1||'?').slice(0,1)+(t.name2?(t.name2||'').slice(0,1):'');
+    const pct=Math.round(t.pts/maxPts*100);
+    const isMe=t.id===teamId;
+    return '<div class="lb-row" style="'+(isMe?'background:#fff9e0;border-radius:12px;padding:14px 10px;margin:0 -10px;':'')+'">'+
+      '<div class="lb-rank">'+(rankEmojis[i]||i+1)+'</div>'+
+      '<div class="lb-avatar" style="background:'+av.bg+';color:'+av.color+'">'+initials.toUpperCase()+'</div>'+
+      '<div class="lb-names">'+
+        '<div class="lb-name">'+t.name1+(t.name2?' & '+t.name2:'')+(isMe?' 👈':'')+'</div>'+
+        '<div class="lb-sub">'+(t.teamName||'')+(t.teamName?' · ':'')+t.bothDays+' both-done days · 🔥'+t.streak+' streak</div>'+
+        '<div class="lb-bar-bg"><div class="lb-bar-fill" style="width:'+pct+'%"></div></div>'+
+      '</div>'+
+      '<div class="lb-pts"><div class="lb-pts-num">'+t.pts+'</div><div class="lb-pts-lbl">pts</div></div>'+
+    '</div>';
+  }).join('');
+}
+
+async function syncToLeaderboard(){
+  setSyncStatus('Syncing to leaderboard...');
+  const data=await fetchRemote();
+  if(!data.teams)data.teams=[];
+  const idx=data.teams.findIndex(t=>t.id===teamId);
+  const entry={id:teamId,name1,name2,teamName,state};
+  if(idx>=0)data.teams[idx]=entry;else data.teams.push(entry);
+  await pushRemote(data);
+  setSyncStatus('Leaderboard updated ✓');
+  setTimeout(()=>setSyncStatus(''),3000);
 }
 
 function startChallenge(){
@@ -638,11 +684,13 @@ function startChallenge(){
   if(!v1){document.getElementById('setup-name1').focus();return;}
   name1=v1;name2=document.getElementById('setup-name2').value.trim();
   teamName=document.getElementById('setup-team').value.trim();
-  persist();decideScreen();
+  if(!teamId)teamId='team_'+Date.now()+'_'+Math.random().toString(36).slice(2,6);
+  saveLocal();decideScreen();
 }
 function startSolo(){
   name1=document.getElementById('setup-name1').value.trim()||'Me';name2='';teamName='';
-  persist();decideScreen();
+  if(!teamId)teamId='team_'+Date.now()+'_'+Math.random().toString(36).slice(2,6);
+  saveLocal();decideScreen();
 }
 function decideScreen(){
   if(isChallengeStarted()){
@@ -661,7 +709,7 @@ function showCountdownNames(){
   const n1=name1||'You',n2=name2;
   const team=teamName?'<strong>'+teamName+'</strong><br>':'';
   const names=n2?'💗 '+n1+' & 💪 '+n2:'💗 '+n1;
-  document.getElementById('countdown-names').innerHTML=team+'<span>'+names+'</span><br><span style="font-size:12px;color:#aaa;margin-top:4px;display:block">You\'re in — share with your friends to get them signed up!</span>';
+  document.getElementById('countdown-names').innerHTML=team+'<span>'+names+'</span><br><span style="font-size:12px;color:#aaa;margin-top:4px;display:block">You\'re in! Share the link so your friends can join 🌴</span>';
 }
 function goBackToSetup(){
   document.getElementById('countdown-screen').style.display='none';
@@ -692,17 +740,14 @@ function openEditNames(){
 }
 function closeEditModal(){document.getElementById('edit-modal').classList.remove('show')}
 function saveNames(){
-  const v1=document.getElementById('edit-name1').value.trim();
-  if(!v1)return;
-  name1=v1;name2=document.getElementById('edit-name2').value.trim();
-  teamName=document.getElementById('edit-team').value.trim();
-  persist();applyNames();renderWeek();closeEditModal();
+  const v1=document.getElementById('edit-name1').value.trim();if(!v1)return;
+  name1=v1;name2=document.getElementById('edit-name2').value.trim();teamName=document.getElementById('edit-team').value.trim();
+  saveLocal();applyNames();renderWeek();closeEditModal();syncToLeaderboard();
 }
 function openCheatInfo(){
   const{earned,used,remaining}=calcCheatDays();
-  const cons=calcCurrentCons();
-  const toNext=earned<3?(6-(cons%6)||6):0;
-  document.getElementById('cheat-modal-body').innerHTML='<strong>'+earned+' / 3</strong> cheat days earned.<br><br><strong>'+used+'</strong> used &nbsp;·&nbsp; <strong>'+remaining+'</strong> remaining.<br><br>'+(earned<3?'You need <strong>'+toNext+' more consecutive both-done days</strong> to earn your next cheat day.<br><br>':'Max 3 earned — absolute legends!<br><br>')+'Use a cheat day when logging to skip a day without breaking your streak.';
+  const cons=calcCurrentCons();const toNext=earned<3?(6-(cons%6)||6):0;
+  document.getElementById('cheat-modal-body').innerHTML='<strong>'+earned+' / 3</strong> cheat days earned.<br><br><strong>'+used+'</strong> used · <strong>'+remaining+'</strong> remaining.<br><br>'+(earned<3?'You need <strong>'+toNext+' more consecutive both-done days</strong> to earn your next cheat day.<br><br>':'Max 3 earned — absolute legends!<br><br>')+'Use a cheat day to skip without breaking your streak.';
   document.getElementById('cheat-modal').classList.add('show');
 }
 
@@ -718,72 +763,45 @@ function selectWeek(i){currentWeek=i;renderWeekTabs();renderWeek()}
 function renderWeek(){
   const w=weeks[currentWeek];
   const n1=name1||'You',n2=name2||'Partner';
-  const weekComplete=isWeekComplete(currentWeek);
-
   const circles=DAYS.map((d,i)=>{
-    const k=gk(currentWeek,i);
-    const entry=state[k];
-    const isRest=d==='Sun';
+    const k=gk(currentWeek,i);const entry=state[k];const isRest=d==='Sun';
     if(isRest)return '<div class="day-cell"><div class="day-label">'+d+'</div><div class="day-circle rest">🌿</div></div>';
     let cls='',icon='○';
-    if(entry){
-      const who=entry.who;
-      if(who==='you'){cls='you-done';icon='💗';}
-      else if(who==='hub'){cls='hub-done';icon='💪';}
-      else if(who==='both'){cls='both-done';icon='🌴';}
-      else if(who==='cheat'){cls='cheat-used';icon='🎟️';}
-    }
+    if(entry){const who=entry.who;if(who==='you'){cls='you-done';icon='💗';}else if(who==='hub'){cls='hub-done';icon='💪';}else if(who==='both'){cls='both-done';icon='🌴';}else if(who==='cheat'){cls='cheat-used';icon='🎟️';}}
     const wt=entry&&entry.p1type?WTYPES.find(t=>t.id===entry.p1type):null;
-    const detail=wt?wt.icon:'';
-    return '<div class="day-cell"><div class="day-label">'+d+'</div><div class="day-circle '+cls+'" onclick="openModal('+i+')">'+icon+'</div><div class="day-log-detail">'+detail+'</div></div>';
+    return '<div class="day-cell"><div class="day-label">'+d+'</div><div class="day-circle '+cls+'" onclick="openModal('+i+')">'+icon+'</div><div class="day-log-detail">'+(wt?wt.icon:'')+'</div></div>';
   }).join('');
 
   const bombshell=isBombshellRevealed(currentWeek)?getBombshellForWeek(currentWeek):null;
-  const bombshellCard=bombshell?'<div class="workout-card bombshell" onclick="openBombshellModal()" style="cursor:pointer;grid-column:1/-1">'+
-    '<div class="workout-card-icon">📱💥</div>'+
-    '<div class="workout-card-title">BOMBSHELL: '+bombshell.title+'</div>'+
-    '<div class="workout-card-detail">'+bombshell.detail+'</div>'+
-    '<div class="workout-card-min">⏱ '+bombshell.time+' · Tap for full details</div>'+
-    '</div>':'';
+  const bombshellCard=bombshell?'<div class="workout-card bombshell" onclick="openBombshellModal()" style="grid-column:1/-1"><div class="workout-card-icon">📱💥</div><div class="workout-card-title">BOMBSHELL: '+bombshell.title+'</div><div class="workout-card-detail">'+bombshell.detail+'</div><div class="workout-card-min">⏱ '+bombshell.time+' · Tap for full details</div></div>':'';
 
   function makeCards(plan,isP1){
     return plan.map((wo,i)=>{
-      const entry=state[gk(currentWeek,i)];
-      const who=entry?entry.who:'';
+      const entry=state[gk(currentWeek,i)];const who=entry?entry.who:'';
       const logged=isP1?(who==='you'||who==='both'||who==='cheat'):(who==='hub'||who==='both'||who==='cheat');
-      const typeKey=isP1?'p1type':'p2type';
-      const durKey=isP1?'p1duration':'p2duration';
-      const effortKey=isP1?'p1effort':'p2effort';
-      const wt=logged&&entry[typeKey]?WTYPES.find(t=>t.id===entry[typeKey]):null;
-      const effortIcons=['😌','💪','🔥'];
-      const extra=logged?'<div style="margin-top:6px;font-size:11px;color:#2a9d8f">'+(wt?wt.icon+' '+wt.label:'✓ Done')+(entry[durKey]?' · '+entry[durKey]+'min':'')+(entry[effortKey]?' · '+effortIcons[entry[effortKey]-1]:'')+'</div>':'';
+      const tk=isP1?'p1type':'p2type',dk=isP1?'p1duration':'p2duration',ek=isP1?'p1effort':'p2effort';
+      const wt=logged&&entry[tk]?WTYPES.find(t=>t.id===entry[tk]):null;
+      const ei=['😌','💪','🔥'];
+      const extra=logged?'<div style="margin-top:5px;font-size:11px;color:#2a9d8f">'+(wt?wt.icon+' '+wt.label:'✓ Done')+(entry[dk]?' · '+entry[dk]+'min':'')+(entry[ek]?' · '+ei[entry[ek]-1]:'')+'</div>':'';
       return '<div class="workout-card '+wo.type+'"><div class="workout-card-icon">'+wo.icon+'</div><div class="workout-card-title">'+DAYS[i]+': '+wo.title+'</div><div class="workout-card-detail">'+wo.detail+'</div><div class="workout-card-min">⏱ '+wo.min+'</div>'+extra+'</div>';
     }).join('');
   }
 
-  const recapBtn=weekComplete?'<button onclick="showWeekRecap('+currentWeek+')" style="background:var(--gold);color:var(--dark);border:none;padding:10px 20px;border-radius:100px;font-family:\'DM Sans\',sans-serif;font-size:13px;font-weight:500;cursor:pointer;margin-bottom:16px;display:block">📊 See week '+((currentWeek+1))+' recap</button>':'';
-
+  const recapBtn=isWeekComplete(currentWeek)?'<button onclick="showWeekRecap('+currentWeek+')" style="background:var(--gold);color:var(--dark);border:none;padding:10px 20px;border-radius:100px;font-family:\'DM Sans\',sans-serif;font-size:13px;font-weight:500;cursor:pointer;margin-bottom:16px;display:block">📊 See week '+( currentWeek+1)+' recap</button>':'';
   const partnerSection=name2?'<div class="week-card"><div class="workouts-title">💪 '+n2+"'s Workouts</div><div class=\"workout-cards\">"+makeCards(w.hub,false)+'</div></div>':'';
+
   document.getElementById('week-content').innerHTML=
-    '<div class="week-card">'+
-    '<div class="week-header"><div class="week-title">'+w.title+'</div><div class="week-theme">'+w.theme+'</div></div>'+
-    recapBtn+
-    '<div class="legend">'+
-    '<span class="legend-item"><span class="legend-dot" style="background:var(--pink)"></span>'+n1+' done</span>'+
-    (name2?'<span class="legend-item"><span class="legend-dot" style="background:var(--teal)"></span>'+n2+' done</span>':'')+
-    '<span class="legend-item"><span class="legend-dot" style="background:var(--gold)"></span>Both 🌴</span>'+
-    '<span class="legend-item"><span class="legend-dot" style="background:#a855f7"></span>Cheat day</span>'+
-    '<span style="font-size:12px;color:#aaa">Tap to log</span></div>'+
+    '<div class="week-card"><div class="week-header"><div class="week-title">'+w.title+'</div><div class="week-theme">'+w.theme+'</div></div>'+recapBtn+
+    '<div class="legend"><span class="legend-item"><span class="legend-dot" style="background:var(--pink)"></span>'+n1+' done</span>'+(name2?'<span class="legend-item"><span class="legend-dot" style="background:var(--teal)"></span>'+n2+' done</span>':'')+
+    '<span class="legend-item"><span class="legend-dot" style="background:var(--gold)"></span>Both 🌴</span><span class="legend-item"><span class="legend-dot" style="background:#a855f7"></span>Cheat day</span><span style="font-size:12px;color:#aaa">Tap to log</span></div>'+
     '<div class="days-grid">'+circles+'</div></div>'+
-    '<div class="week-card"><div class="workouts-title">💗 '+n1+"'s Workouts</div><div class=\"workout-cards\">"+makeCards(w.you,true)+bombshellCard+'</div></div>'+
-    partnerSection;
+    '<div class="week-card"><div class="workouts-title">💗 '+n1+"'s Workouts</div><div class=\"workout-cards\">"+makeCards(w.you,true)+bombshellCard+'</div></div>'+partnerSection;
 }
 
 function renderProgress(){
   let yc=0,hc=0;const total=8*6;
   for(let w=0;w<8;w++)for(let d=0;d<6;d++){
-    const entry=state[gk(w,d)];if(!entry)continue;
-    const who=entry.who;
+    const entry=state[gk(w,d)];if(!entry)continue;const who=entry.who;
     if(who==='you'||who==='both'||who==='cheat')yc++;
     if((who==='hub'||who==='both'||who==='cheat')&&name2)hc++;
   }
@@ -794,6 +812,29 @@ function renderProgress(){
   document.getElementById('count-hub').textContent=hc+' / '+total+' workouts';
   document.getElementById('streak-count').textContent=streak+' days';
   updateCheatDisplay();
+}
+
+function showWeekRecap(wi){
+  let totalMins=0,beastCount=0,bothDays=0,topType={};
+  for(let d=0;d<6;d++){
+    const e=state[gk(wi,d)];if(!e)continue;
+    if(e.who==='both'||e.who==='cheat')bothDays++;
+    if(e.p1duration)totalMins+=parseInt(e.p1duration)||0;
+    if(e.p2duration)totalMins+=parseInt(e.p2duration)||0;
+    if(e.p1effort===3||e.p2effort===3)beastCount++;
+    if(e.p1type)topType[e.p1type]=(topType[e.p1type]||0)+1;
+    if(e.p2type)topType[e.p2type]=(topType[e.p2type]||0)+1;
+  }
+  const topWt=Object.entries(topType).sort((a,b)=>b[1]-a[1])[0];
+  const tw=topWt?WTYPES.find(t=>t.id===topWt[0]):null;
+  document.getElementById('recap-content').innerHTML=
+    '<div class="recap-card"><div class="recap-title">Week '+(wi+1)+' Recap 🌴</div>'+
+    '<div class="recap-stat"><span>Both-done days</span><span class="recap-stat-val">'+bothDays+' / 6</span></div>'+
+    '<div class="recap-stat"><span>Total minutes sweated</span><span class="recap-stat-val">'+(totalMins||'?')+'</span></div>'+
+    '<div class="recap-stat"><span>Beast mode moments</span><span class="recap-stat-val">'+beastCount+'</span></div>'+
+    (tw?'<div class="recap-stat"><span>Most popular workout</span><span class="recap-stat-val">'+tw.icon+' '+tw.label+'</span></div>':'')+
+    '<div class="recap-narration">"'+(WEEK_RECAPS[wi]||'Another week done in the villa. The gains are real.')+'"<br><br>— Iain Stirling, probably</div></div>';
+  document.getElementById('recap-modal').classList.add('show');
 }
 
 function buildWGrid(elId,selId){
@@ -819,51 +860,34 @@ function openModal(dayIndex){
   document.getElementById('log-p1-title').textContent=n1.toUpperCase()+"'S WORKOUT";
   document.getElementById('log-p2-title').textContent=n2.toUpperCase()+"'S WORKOUT";
   if(entry){
-    selP1Type=entry.p1type||'';selP2Type=entry.p2type||'';
-    selP1Effort=entry.p1effort||0;selP2Effort=entry.p2effort||0;
-    document.getElementById('p1-duration').value=entry.p1duration||'';
-    document.getElementById('p2-duration').value=entry.p2duration||'';
-    document.getElementById('p1-notes').value=entry.p1notes||'';
-    document.getElementById('p2-notes').value=entry.p2notes||'';
-  }else{
-    ['p1-duration','p2-duration','p1-notes','p2-notes'].forEach(id=>document.getElementById(id).value='');
-  }
+    selP1Type=entry.p1type||'';selP2Type=entry.p2type||'';selP1Effort=entry.p1effort||0;selP2Effort=entry.p2effort||0;
+    document.getElementById('p1-duration').value=entry.p1duration||'';document.getElementById('p2-duration').value=entry.p2duration||'';
+    document.getElementById('p1-notes').value=entry.p1notes||'';document.getElementById('p2-notes').value=entry.p2notes||'';
+  }else{['p1-duration','p2-duration','p1-notes','p2-notes'].forEach(id=>document.getElementById(id).value='');}
   buildWGrid('wtype-p1',selP1Type);buildWGrid('wtype-p2',selP2Type);
-  if(selP1Effort)setEffort('p1',selP1Effort);
-  if(selP2Effort)setEffort('p2',selP2Effort);
+  if(selP1Effort)setEffort('p1',selP1Effort);if(selP2Effort)setEffort('p2',selP2Effort);
   const{remaining}=calcCheatDays();
   document.getElementById('cheat-row').style.display=(remaining>0||(entry&&entry.who==='cheat'))?'':'none';
   document.getElementById('cheat-remaining-modal').textContent=remaining;
   document.getElementById('who-hub-btn').style.display=name2?'':'none';
   document.getElementById('who-both-btn').style.display=name2?'':'none';
-  if(entry&&entry.who)selectWho(entry.who);else{
-    document.getElementById('log-p1-section').style.display='block';
-    document.getElementById('log-p2-section').style.display='none';
-    ['you','hub','both','cheat'].forEach(w=>{const btn=document.getElementById('who-'+w+'-btn');if(btn)btn.classList.remove('selected');});
-  }
+  if(entry&&entry.who)selectWho(entry.who);
+  else{document.getElementById('log-p1-section').style.display='block';document.getElementById('log-p2-section').style.display='none';['you','hub','both','cheat'].forEach(w=>{const btn=document.getElementById('who-'+w+'-btn');if(btn)btn.classList.remove('selected');});}
   document.getElementById('modal').classList.add('show');
 }
 function closeModal(){document.getElementById('modal').classList.remove('show');selectedDay=null;}
-function saveLog(){
+async function saveLog(){
   if(selectedDay===null)return;
   if(!whoSelected){alert('Please select who completed today!');return;}
-  const k=gk(currentWeek,selectedDay);
-  const prevEntry=state[k];
-  state[k]={who:whoSelected,p1type:selP1Type,p1duration:document.getElementById('p1-duration').value,p1effort:selP1Effort,p1notes:document.getElementById('p1-notes').value,p2type:selP2Type,p2duration:document.getElementById('p2-duration').value,p2effort:selP2Effort,p2notes:document.getElementById('p2-notes').value};
-  persist();closeModal();renderWeek();renderProgress();renderWeekTabs();
+  state[gk(currentWeek,selectedDay)]={who:whoSelected,p1type:selP1Type,p1duration:document.getElementById('p1-duration').value,p1effort:selP1Effort,p1notes:document.getElementById('p1-notes').value,p2type:selP2Type,p2duration:document.getElementById('p2-duration').value,p2effort:selP2Effort,p2notes:document.getElementById('p2-notes').value};
+  saveLocal();closeModal();renderWeek();renderProgress();renderWeekTabs();
   showCelebrate(whoSelected);
-  // Auto show recap if week just completed
-  setTimeout(()=>{
-    if(isWeekComplete(currentWeek)&&!document.getElementById('recap-modal').classList.contains('show')){
-      showWeekRecap(currentWeek);
-    }
-  },2500);
+  await syncToLeaderboard();
+  setTimeout(()=>{if(isWeekComplete(currentWeek)&&!document.getElementById('recap-modal').classList.contains('show'))showWeekRecap(currentWeek);},2500);
 }
-document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
-document.getElementById('edit-modal').addEventListener('click',function(e){if(e.target===this)closeEditModal();});
-document.getElementById('cheat-modal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('show');});
-document.getElementById('recap-modal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('show');});
-document.getElementById('bombshell-modal').addEventListener('click',function(e){if(e.target===this)this.classList.remove('show');});
+['modal','edit-modal','cheat-modal','recap-modal','bombshell-modal'].forEach(id=>{
+  document.getElementById(id).addEventListener('click',function(e){if(e.target===this)this.classList.remove('show');});
+});
 </script>
 </body>
 </html>
