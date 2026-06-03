@@ -25,7 +25,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .setup-btn{width:100%;padding:14px;background:var(--coral);color:white;border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;cursor:pointer;margin-top:8px;transition:background .2s}
 .setup-btn:hover{background:#e05555}
 .setup-solo{background:none;border:2px solid #e8e8e8;color:#888;font-size:14px}
-.setup-solo:hover{background:#f9f9f9}
 .countdown-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#FF6B6B,#FF9A9E 50%,#FFD93D)}
 .countdown-card{background:white;border-radius:24px;padding:40px 36px;max-width:440px;width:100%;text-align:center}
 .countdown-card h1{font-family:'Playfair Display',serif;font-size:26px;color:var(--dark);margin-bottom:6px;line-height:1.3}
@@ -58,9 +57,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .text-banner-title{color:var(--gold);font-weight:700;font-size:14px;letter-spacing:.05em;margin-bottom:4px}
 .text-banner-msg{color:white;font-size:13px;line-height:1.5}
 .text-banner-tap{color:rgba(255,255,255,.5);font-size:11px;margin-top:4px}
-.nav-tabs{display:flex;background:white;border-bottom:2px solid #f0f0f0;overflow-x:auto;scrollbar-width:none}
-.nav-tabs::-webkit-scrollbar{display:none}
-.nav-tab{flex:1;min-width:80px;padding:14px 8px;text-align:center;font-size:12px;font-weight:500;color:#999;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
+.nav-tabs{display:flex;background:white;border-bottom:2px solid #f0f0f0}
+.nav-tab{flex:1;padding:14px 8px;text-align:center;font-size:12px;font-weight:500;color:#999;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
 .nav-tab.active{color:var(--coral);border-bottom-color:var(--coral)}
 .container{max-width:900px;margin:0 auto;padding:24px 20px 60px}
 .week-tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:24px;scrollbar-width:none}
@@ -69,15 +67,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .week-tab:hover{border-color:var(--coral);color:var(--coral)}
 .week-tab.active{background:var(--coral);border-color:var(--coral);color:white}
 .week-tab.completed{background:var(--teal);border-color:var(--teal);color:white}
-.week-card{background:white;border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,.07);margin-bottom:20px}
+.week-card{background:white;border-radius:20px;padding:24px;box-shadow:0 4px 24px rgba(0,0,0,.07);margin-bottom:20px}
 .week-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px}
 .week-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--dark)}
 .week-theme{background:var(--soft);color:var(--coral);padding:6px 14px;border-radius:100px;font-size:13px;font-weight:500}
-.days-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:24px}
-@media(max-width:600px){.days-grid{grid-template-columns:repeat(4,1fr)}}
+.days-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:16px}
+@media(max-width:500px){.days-grid{grid-template-columns:repeat(7,1fr);gap:4px}}
 .day-cell{text-align:center}
-.day-label{font-size:10px;color:#999;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
-.day-circle{width:44px;height:44px;border-radius:50%;border:2px solid #e8e8e8;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:18px;transition:all .2s;background:white;cursor:pointer}
+.day-label{font-size:9px;color:#999;font-weight:500;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.day-circle{width:40px;height:40px;border-radius:50%;border:2px solid #e8e8e8;display:flex;align-items:center;justify-content:center;margin:0 auto;font-size:16px;transition:all .2s;background:white;cursor:pointer}
+@media(max-width:400px){.day-circle{width:36px;height:36px;font-size:14px}}
 .day-circle:hover{border-color:var(--coral);transform:scale(1.05)}
 .day-circle.you-done{border-color:var(--pink);background:var(--soft)}
 .day-circle.hub-done{border-color:#4ECDC4;background:#e8fafa}
@@ -85,24 +84,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .day-circle.cheat-used{border-color:#a855f7;background:#f3e8ff}
 .day-circle.rest{background:#f5f5f5;border-color:#e0e0e0;cursor:default}
 @keyframes glow{0%{box-shadow:0 0 0 0 rgba(255,217,61,.5)}70%{box-shadow:0 0 0 10px rgba(255,217,61,0)}100%{box-shadow:0 0 0 0 rgba(255,217,61,0)}}
-.day-log-detail{font-size:9px;color:#999;margin-top:2px;text-align:center}
-.workout-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
-.workout-card{border-radius:14px;padding:14px;border:2px solid transparent}
-.workout-card.pilates{background:linear-gradient(135deg,#ffe4f0,#ffd1e8);border-color:#ffb3d1}
-.workout-card.strength{background:linear-gradient(135deg,#e0f0ff,#d1e8ff);border-color:#a8d4ff}
-.workout-card.cardio{background:linear-gradient(135deg,#fff3d4,#ffe8a8);border-color:#ffd166}
-.workout-card.active-rest{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-color:#a5d6a7}
-.workout-card.hiit{background:linear-gradient(135deg,#fce4ec,#f8bbd0);border-color:#f48fb1}
-.workout-card.walk{background:linear-gradient(135deg,#e8eaf6,#c5cae9);border-color:#9fa8da}
-.workout-card.bombshell{background:linear-gradient(135deg,#fff0e0,#ffd9b0);border-color:#ffb347;cursor:pointer}
-.workout-card-icon{font-size:20px;margin-bottom:5px}
-.workout-card-title{font-weight:600;font-size:13px;margin-bottom:2px}
-.workout-card-detail{font-size:11px;color:#555;line-height:1.4}
-.workout-card-min{font-size:10px;color:#888;margin-top:3px}
-.legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
-.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#666}
-.legend-dot{width:12px;height:12px;border-radius:50%}
-.progress-section{background:white;border-radius:20px;padding:24px 28px;box-shadow:0 4px 24px rgba(0,0,0,.07);margin-bottom:20px}
+.day-log-detail{font-size:9px;color:#999;margin-top:2px;text-align:center;min-height:12px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#666}
+.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.progress-section{background:white;border-radius:20px;padding:20px 24px;box-shadow:0 4px 24px rgba(0,0,0,.07);margin-bottom:20px}
 .progress-title{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:16px}
 .progress-people{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .person-name{font-size:13px;font-weight:600;color:#888;margin-bottom:6px}
@@ -133,50 +119,46 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .lb-names{flex:1;min-width:0}
 .lb-name{font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lb-sub{font-size:11px;color:#aaa;margin-top:2px}
+.lb-bar-bg{background:#f0f0f0;border-radius:100px;height:4px;margin-top:4px;overflow:hidden}
+.lb-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--pink),var(--coral));transition:width .6s ease}
 .lb-pts{text-align:right;flex-shrink:0}
 .lb-pts-num{font-size:18px;font-weight:700;color:var(--coral)}
 .lb-pts-lbl{font-size:10px;color:#aaa}
-.lb-bar-bg{background:#f0f0f0;border-radius:100px;height:4px;margin-top:4px;overflow:hidden}
-.lb-bar-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--pink),var(--coral));transition:width .6s ease}
 .pts-explainer{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
 .pts-box{background:var(--soft);border-radius:12px;padding:12px;text-align:center}
 .pts-num{font-size:22px;font-weight:700;color:var(--coral)}
 .pts-lbl{font-size:11px;color:#888;margin-top:2px}
-/* Modals */
+/* Modal */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:100;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px}
 .modal-overlay.show{opacity:1;pointer-events:all}
-.modal{background:white;border-radius:24px;padding:28px;text-align:center;max-width:380px;width:100%;transform:scale(.9);transition:transform .3s;max-height:90vh;overflow-y:auto}
+.modal{background:white;border-radius:24px;padding:24px;text-align:center;max-width:360px;width:100%;transform:scale(.9);transition:transform .3s;max-height:92vh;overflow-y:auto}
 .modal-overlay.show .modal{transform:scale(1)}
-.modal h2{font-family:'Playfair Display',serif;font-size:22px;margin:8px 0 4px}
-.modal p{font-size:13px;color:#666;margin-bottom:14px}
-.wtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px;margin-bottom:14px;text-align:left}
-.wtype-btn{padding:9px 6px;border-radius:12px;border:2px solid #e8e8e8;background:white;cursor:pointer;font-size:12px;text-align:center;transition:all .2s;font-family:'DM Sans',sans-serif;color:var(--dark)}
-.wtype-btn:hover,.wtype-btn.sel{border-color:var(--coral);background:var(--soft);color:#c0392b}
-.wtype-icon{font-size:18px;display:block;margin-bottom:3px}
-.log-section{background:#f9f9f9;border-radius:14px;padding:14px;margin-bottom:12px;text-align:left}
-.log-section-title{font-size:11px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
-.log-field{margin-bottom:10px}
-.log-field label{font-size:12px;color:#666;display:block;margin-bottom:4px}
-.log-field input,.log-field textarea{width:100%;padding:9px 12px;border:1.5px solid #e0e0e0;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;background:white;color:var(--dark)}
-.log-field input:focus,.log-field textarea:focus{border-color:var(--coral)}
-.log-field textarea{resize:none;height:52px}
-.effort-row{display:flex;gap:8px}
-.effort-btn{flex:1;padding:8px 4px;border-radius:10px;border:2px solid #e8e8e8;background:white;cursor:pointer;font-size:12px;font-family:'DM Sans',sans-serif;transition:all .2s;text-align:center}
-.effort-btn.sel-1{border-color:#4ECDC4;background:#e8fafa}
-.effort-btn.sel-2{border-color:var(--gold);background:#fff9e0}
-.effort-btn.sel-3{border-color:var(--coral);background:var(--soft)}
-.who-section{margin-bottom:14px;text-align:left}
-.who-section-label{font-size:11px;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
-.who-row{display:flex;gap:8px;margin-bottom:8px}
-.who-btn{flex:1;padding:11px;border-radius:14px;border:2px solid transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;transition:all .2s}
-.who-btn.you-btn{background:var(--soft);border-color:var(--pink);color:var(--coral)}
-.who-btn.hub-btn{background:#e8fafa;border-color:var(--teal);color:#2a9d8f}
-.who-btn.both-btn{background:#fff9e0;border-color:var(--gold);color:#b8860b;width:100%}
-.who-btn.cheat-btn{background:#f3e8ff;border-color:#a855f7;color:#581c87;width:100%}
-.who-btn.selected{box-shadow:0 0 0 3px rgba(0,0,0,.1);transform:scale(1.02)}
-.modal-save-btn{width:100%;padding:12px;background:var(--coral);color:white;border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;margin-top:4px;transition:background .2s}
+.modal h2{font-family:'Playfair Display',serif;font-size:20px;margin:6px 0 4px}
+.modal-day{font-size:13px;color:#aaa;margin-bottom:18px}
+/* Who buttons - big and thumb friendly */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.who-big-btn{padding:16px 10px;border-radius:16px;border:2.5px solid transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;transition:all .2s;text-align:center;line-height:1.4}
+.who-big-btn .wb-emoji{font-size:24px;display:block;margin-bottom:4px}
+.who-big-btn.you-btn{background:var(--soft);border-color:var(--pink);color:#c0392b}
+.who-big-btn.hub-btn{background:#e8fafa;border-color:var(--teal);color:#2a9d8f}
+.who-big-btn.both-btn{background:#fff9e0;border-color:var(--gold);color:#b8860b}
+.who-big-btn.cheat-btn{background:#f3e8ff;border-color:#a855f7;color:#581c87}
+.who-big-btn.selected{transform:scale(1.03);box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.who-big-btn:hover{transform:scale(1.02)}
+/* Quick log rows */
+.quick-log{margin-top:14px;border-top:1.5px solid #f0f0f0;padding-top:14px}
+.quick-log-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.quick-log-name{font-size:13px;font-weight:500;width:60px;flex-shrink:0;text-align:left}
+.wtype-scroll{display:flex;gap:6px;overflow-x:auto;flex:1;scrollbar-width:none;padding-bottom:2px}
+.wtype-scroll::-webkit-scrollbar{display:none}
+.wt-pill{flex-shrink:0;padding:7px 12px;border-radius:100px;border:1.5px solid #e8e8e8;background:white;cursor:pointer;font-size:12px;font-family:'DM Sans',sans-serif;color:var(--dark);transition:all .2s;white-space:nowrap}
+.wt-pill:hover,.wt-pill.sel{border-color:var(--coral);background:var(--soft);color:#c0392b}
+.dur-input{width:64px;flex-shrink:0;padding:8px 10px;border:1.5px solid #e8e8e8;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:13px;text-align:center;outline:none;color:var(--dark);background:white}
+.dur-input:focus{border-color:var(--coral)}
+.modal-save-btn{width:100%;padding:14px;background:var(--coral);color:white;border:none;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;margin-top:14px;transition:background .2s}
 .modal-save-btn:hover{background:#e05555}
 .modal-cancel-btn{width:100%;padding:10px;background:none;border:2px solid #e0e0e0;color:#888;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;margin-top:8px}
+/* Edit names */
 .edit-field{text-align:left;margin-bottom:12px}
 .edit-field label{display:block;font-size:12px;font-weight:500;color:#888;margin-bottom:5px}
 .edit-field input{width:100%;padding:10px 14px;border:2px solid #e8e8e8;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;color:var(--dark);background:white}
@@ -184,7 +166,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .edit-btns{display:flex;gap:8px;margin-top:12px}
 .edit-btns button{flex:1;padding:11px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;border:2px solid #e0e0e0;background:white;color:#666}
 .edit-btns .save-btn{background:var(--coral);border-color:var(--coral);color:white}
-.workouts-title{font-size:13px;font-weight:500;color:#999;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
+/* Celebrate */
 .celebrate-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px}
 .celebrate-overlay.show{opacity:1;pointer-events:all}
 .celebrate-card{background:var(--dark);border-radius:24px;padding:32px;text-align:center;max-width:340px;width:100%;border:2px solid var(--gold)}
@@ -192,20 +174,22 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .celebrate-title{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold);margin-bottom:10px}
 .celebrate-msg{font-size:14px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:20px;font-style:italic}
 .celebrate-close{background:var(--coral);color:white;border:none;padding:12px 28px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:15px;cursor:pointer}
+/* Recap */
 .recap-card{background:var(--dark);border-radius:20px;padding:20px;margin-bottom:14px;text-align:left}
 .recap-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin-bottom:14px;text-align:center}
 .recap-stat{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(255,255,255,.85)}
 .recap-stat:last-child{border-bottom:none}
 .recap-stat-val{color:var(--gold);font-weight:700;font-size:15px}
 .recap-narration{background:rgba(255,255,255,.05);border-radius:12px;padding:14px;margin-top:12px;font-size:13px;color:rgba(255,255,255,.9);line-height:1.7;font-style:italic;text-align:center}
+/* Bombshell */
 .bombshell-modal{background:var(--dark);border:2px solid var(--gold)}
 .bombshell-modal h2{color:var(--gold)}
-.bombshell-modal p{color:rgba(255,255,255,.8)}
-.bombshell-card{background:rgba(255,255,255,.08);border-radius:14px;padding:16px;margin:12px 0;text-align:left}
+.bombshell-modal .modal-day{color:rgba(255,255,255,.6)}
+.bombshell-card-inner{background:rgba(255,255,255,.08);border-radius:14px;padding:16px;margin:12px 0;text-align:left}
 .bc-title{font-size:16px;font-weight:600;color:var(--gold);margin-bottom:6px}
 .bc-detail{font-size:13px;color:rgba(255,255,255,.8);line-height:1.5}
 .bc-time{font-size:12px;color:rgba(255,255,255,.5);margin-top:6px}
-.sync-status{text-align:center;font-size:11px;color:#aaa;padding:8px;min-height:24px}
+.sync-status{text-align:center;font-size:11px;color:#aaa;padding:6px;min-height:22px}
 </style>
 </head>
 <body>
@@ -220,7 +204,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
     <div class="setup-field"><label>Partner's name</label><input type="text" id="setup-name2" placeholder="e.g. Jake" maxlength="20"></div>
     <div class="setup-field"><label>Team name</label><input type="text" id="setup-team" placeholder="e.g. Team Chaos" maxlength="30"></div>
     <button class="setup-btn" onclick="startChallenge()">Enter the villa! 🌴</button>
-    <button class="setup-btn setup-solo" onclick="startSolo()">Just me for now</button>
+    <button class="setup-btn setup-solo" style="margin-top:8px" onclick="startSolo()">Just me for now</button>
   </div>
 </div>
 
@@ -229,7 +213,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
     <span class="setup-palm">🌴</span>
     <h1>The villa is <em>not</em> open yet.</h1>
     <p class="countdown-tagline">"No one's coupling up until everyone's warmed up."</p>
-    <p class="countdown-sub">Challenge kicks off Monday 8th June — get your team ready</p>
+    <p class="countdown-sub">Challenge kicks off Monday 8th June</p>
     <div class="countdown-grid">
       <div class="countdown-unit"><span class="countdown-num" id="cd-days">0</span><span class="countdown-lbl">Days</span></div>
       <div class="countdown-unit"><span class="countdown-num" id="cd-hours">0</span><span class="countdown-lbl">Hours</span></div>
@@ -238,7 +222,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
     </div>
     <div class="countdown-names" id="countdown-names"></div>
     <span class="edit-names-link" onclick="goBackToSetup()">✏️ Edit names</span>
-    <div class="prep-tip"><strong>This week — get ready:</strong><br>Share this link with your friends, get everyone signed up, pick your workouts and mentally prepare. The sweating starts Monday. 💪</div>
+    <div class="prep-tip"><strong>This week — get ready:</strong><br>Share the link with your friends, get everyone signed up and mentally prepare. The sweating starts Monday. 💪</div>
   </div>
 </div>
 
@@ -276,15 +260,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
           <div class="person-count" id="count-hub">0 / 48 workouts</div>
         </div>
       </div>
-      <div class="streak-box">
-        <span style="font-size:28px">🔥</span>
-        <div><div class="streak-count" id="streak-count">0 days</div><div class="streak-text">Best both-done streak</div></div>
-      </div>
+      <div class="streak-box"><span style="font-size:28px">🔥</span><div><div class="streak-count" id="streak-count">0 days</div><div class="streak-text">Best both-done streak</div></div></div>
       <div style="height:10px"></div>
-      <div class="cheat-box" onclick="openCheatInfo()">
-        <span style="font-size:28px">🎟️</span>
-        <div><div class="cheat-count" id="cheat-earned-display">0 / 3 earned</div><div class="cheat-text">Cheat days</div><div class="cheat-sub" id="cheat-used-display">0 used · 0 remaining</div></div>
-      </div>
+      <div class="cheat-box" onclick="openCheatInfo()"><span style="font-size:28px">🎟️</span><div><div class="cheat-count" id="cheat-earned-display">0 / 3 earned</div><div class="cheat-text">Cheat days</div><div class="cheat-sub" id="cheat-used-display">0 used · 0 remaining</div></div></div>
     </div>
     <div class="week-tabs" id="week-tabs"></div>
     <div id="week-content"></div>
@@ -292,11 +270,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
   <div id="nav-leaderboard" class="container" style="display:none">
     <div class="week-card">
       <div class="progress-title" style="margin-bottom:6px">🏆 Villa Leaderboard</div>
-      <p style="font-size:13px;color:#aaa;margin-bottom:20px">+1 per person who works out · +3 bonus when both done same day</p>
+      <p style="font-size:13px;color:#aaa;margin-bottom:20px">+1 per person · +5 bonus when both done same day</p>
       <div id="lb-content"><div class="lb-loading">Loading the villa... 🌴</div></div>
       <div class="pts-explainer">
         <div class="pts-box"><div class="pts-num">+1</div><div class="pts-lbl">per person per day</div></div>
-        <div class="pts-box"><div class="pts-num">+3</div><div class="pts-lbl">bonus both done</div></div>
+        <div class="pts-box"><div class="pts-num">+5</div><div class="pts-lbl">bonus both done</div></div>
       </div>
     </div>
   </div>
@@ -306,12 +284,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
       <ul class="rule-list">
         <li><span class="rule-icon">🔒</span>Both of you must complete your daily workout before watching Love Island — no exceptions.</li>
         <li><span class="rule-icon">⏱️</span>Minimum 20 minutes counts. Goal is 45 minutes. Rest days are your gift — use them!</li>
-        <li><span class="rule-icon">🔄</span>Each week has a theme. Log what you actually did — pick a type, duration and effort.</li>
         <li><span class="rule-icon">🌴</span>Sundays are active rest — a walk together counts as both your workouts.</li>
         <li><span class="rule-icon">📱</span>Bombshell challenges drop mid-week — complete both for bonus bragging rights.</li>
         <li><span class="rule-icon">🎟️</span>Every 6 consecutive both-done days earns 1 cheat day. Max 3 total.</li>
-        <li><span class="rule-icon">🏆</span>Leaderboard: +1 per person per day, +3 bonus when both done same day.</li>
-        <li><span class="rule-icon">🎯</span>Complete 6+ weeks = Season Champions. Complete all 8 = Love Island Legends! 🏆</li>
+        <li><span class="rule-icon">🏆</span>+1 per person per day · +5 bonus when both done same day.</li>
+        <li><span class="rule-icon">🎯</span>Complete 6+ weeks = Season Champions. All 8 = Love Island Legends! 🏆</li>
       </ul>
     </div>
   </div>
@@ -320,31 +297,28 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 <!-- Log modal -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
-    <div style="font-size:32px">💪</div>
+    <div style="font-size:28px">📅</div>
     <h2 id="modal-title">Log workout</h2>
-    <p id="modal-day-label">Who worked out today?</p>
-    <div class="who-section">
-      <div class="who-section-label">Who completed today?</div>
-      <div class="who-row">
-        <button class="who-btn you-btn" id="who-you-btn" onclick="selectWho('you')">💗 <span id="who-you-label">Me</span></button>
-        <button class="who-btn hub-btn" id="who-hub-btn" onclick="selectWho('hub')">💪 <span id="who-hub-label">Partner</span></button>
+    <div class="modal-day" id="modal-day-label"></div>
+    <div class="who-grid">
+      <button class="who-big-btn you-btn" id="who-you-btn" onclick="selectWho('you')"><span class="wb-emoji">💗</span><span id="who-you-label">Me</span></button>
+      <button class="who-big-btn hub-btn" id="who-hub-btn" onclick="selectWho('hub')"><span class="wb-emoji">💪</span><span id="who-hub-label">Partner</span></button>
+    </div>
+    <div class="who-grid">
+      <button class="who-big-btn both-btn" id="who-both-btn" onclick="selectWho('both')"><span class="wb-emoji">🌴</span>Both of us!</button>
+      <button class="who-big-btn cheat-btn" id="who-cheat-btn" onclick="selectWho('cheat')"><span class="wb-emoji">🎟️</span>Cheat day<br><span style="font-size:11px;opacity:.8">(<span id="cheat-remaining-modal">0</span> left)</span></button>
+    </div>
+    <div class="quick-log" id="quick-log-section">
+      <div class="quick-log-row" id="p1-log-row">
+        <div class="quick-log-name" id="p1-log-name">💗 Me</div>
+        <div class="wtype-scroll" id="wtype-p1"></div>
+        <input class="dur-input" type="number" id="p1-duration" placeholder="mins" min="1" max="300">
       </div>
-      <div class="who-row"><button class="who-btn both-btn" id="who-both-btn" onclick="selectWho('both')">🌴 Both of us!</button></div>
-      <div class="who-row" id="cheat-row"><button class="who-btn cheat-btn" id="who-cheat-btn" onclick="selectWho('cheat')">🎟️ Use a cheat day (<span id="cheat-remaining-modal">0</span> left)</button></div>
-    </div>
-    <div class="log-section" id="log-p1-section">
-      <div class="log-section-title" id="log-p1-title">YOUR WORKOUT</div>
-      <div class="wtype-grid" id="wtype-p1"></div>
-      <div class="log-field"><label>Duration (mins)</label><input type="number" id="p1-duration" placeholder="e.g. 45" min="1" max="300"></div>
-      <div class="log-field"><label>Effort</label><div class="effort-row" id="effort-p1"><button class="effort-btn" onclick="setEffort('p1',1)">😌 Easy</button><button class="effort-btn" onclick="setEffort('p1',2)">💪 Solid</button><button class="effort-btn" onclick="setEffort('p1',3)">🔥 Beast</button></div></div>
-      <div class="log-field"><label>Notes (optional)</label><textarea id="p1-notes" placeholder="e.g. 45 min reformer, felt amazing!"></textarea></div>
-    </div>
-    <div class="log-section" id="log-p2-section">
-      <div class="log-section-title" id="log-p2-title">PARTNER'S WORKOUT</div>
-      <div class="wtype-grid" id="wtype-p2"></div>
-      <div class="log-field"><label>Duration (mins)</label><input type="number" id="p2-duration" placeholder="e.g. 45" min="1" max="300"></div>
-      <div class="log-field"><label>Effort</label><div class="effort-row" id="effort-p2"><button class="effort-btn" onclick="setEffort('p2',1)">😌 Easy</button><button class="effort-btn" onclick="setEffort('p2',2)">💪 Solid</button><button class="effort-btn" onclick="setEffort('p2',3)">🔥 Beast</button></div></div>
-      <div class="log-field"><label>Notes (optional)</label><textarea id="p2-notes" placeholder="e.g. 5K run, new PB!"></textarea></div>
+      <div class="quick-log-row" id="p2-log-row" style="display:none">
+        <div class="quick-log-name" id="p2-log-name">💪 Partner</div>
+        <div class="wtype-scroll" id="wtype-p2"></div>
+        <input class="dur-input" type="number" id="p2-duration" placeholder="mins" min="1" max="300">
+      </div>
     </div>
     <button class="modal-save-btn" onclick="saveLog()">Save 🌴</button>
     <button class="modal-cancel-btn" onclick="closeModal()">Cancel</button>
@@ -396,9 +370,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
   <div class="modal bombshell-modal">
     <div style="font-size:42px;animation:buzz .3s ease infinite alternate">📱</div>
     <h2>YOU'VE GOT A TEXT!</h2>
-    <p>A bombshell challenge has just entered the villa...</p>
-    <div class="bombshell-card" id="bombshell-content"></div>
-    <div style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 16px">Log it as a bonus on top of your normal workout this week</div>
+    <div class="modal-day">A bombshell challenge has just entered the villa...</div>
+    <div class="bombshell-card-inner" id="bombshell-content"></div>
+    <div style="font-size:12px;color:rgba(255,255,255,.4);margin:10px 0 14px">Complete it on top of your normal workout this week</div>
     <button class="modal-save-btn" onclick="document.getElementById('bombshell-modal').classList.remove('show')" style="background:var(--gold);color:var(--dark)">I'm on it! 💪</button>
     <button class="modal-cancel-btn" style="color:rgba(255,255,255,.5);border-color:rgba(255,255,255,.2)" onclick="document.getElementById('bombshell-modal').classList.remove('show')">Maybe later</button>
   </div>
@@ -408,7 +382,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 const BIN_ID='6a1f81f2f5f4af5e29affe14';
 const API_KEY='$2a$10$HgaGaVP415wlNMAUe1OoZOP7nX.moNf6M1ntJ4Wt.i.B1OIlTmbiy';
 const BIN_URL='https://api.jsonbin.io/v3/b/'+BIN_ID;
-const LKEY='lifc_local_v5';
+const LKEY='lifc_local_v6';
 const START_DATE=new Date('2025-06-08T00:00:00');
 
 const IAIN_LINES=[
@@ -434,7 +408,7 @@ const IAIN_LINES=[
   "They've done the work, they've earned the episode. That's the deal. That's Love Island Fitness.",
   "Some Islanders talk a good game. These two actually play one. Both done. 🌴",
   "She's cracking on and cracking sets. He's not mugging her off tonight.",
-  "The public would 100% keep these two in. Deserve to be here.",
+  "The public would 100% keep these two in. They deserve to be here.",
   "Head's not been turned. Neither have they skipped a session. Loyal to the villa and to the gains.",
   "Mint. Absolutely mint. Both done, no drama, no excuses. This is the dream couple.",
   "She said she was here for the right reasons. Turns out the right reasons are lunges.",
@@ -477,18 +451,9 @@ const AV_COLORS=[
   {bg:'#EEEDFE',color:'#3C3489'},{bg:'#EAF3DE',color:'#27500A'},{bg:'#FAEEDA',color:'#633806'},
 ];
 
-const weeks=[
-  {title:"Week 1",theme:"Build the Habit",you:[{icon:"🧘",type:"pilates",title:"Pilates",detail:"Full body mat class or YouTube session",min:"45 min"},{icon:"🚶",type:"walk",title:"Power Walk",detail:"Brisk outdoor walk, podcast on",min:"30 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Core & glutes focus",min:"45 min"},{icon:"💪",type:"active-rest",title:"Stretch + Walk",detail:"Easy movement day",min:"20 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Arms, back & flexibility",min:"45 min"},{icon:"🚶",type:"walk",title:"Long Walk",detail:"60 min outdoors — enjoy it!",min:"60 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}],hub:[{icon:"🏋️",type:"strength",title:"Bench & Push",detail:"Chest, shoulders, triceps",min:"45 min"},{icon:"🏃",type:"cardio",title:"Treadmill Run",detail:"Steady state, moderate pace",min:"30 min"},{icon:"🏋️",type:"strength",title:"Pull Day",detail:"Back, biceps, rows",min:"45 min"},{icon:"🏃",type:"cardio",title:"Intervals",detail:"1 min on / 1 min off x10",min:"25 min"},{icon:"🏋️",type:"strength",title:"Legs",detail:"Squats, deadlifts, lunges",min:"45 min"},{icon:"🏃",type:"cardio",title:"Easy Run",detail:"Relaxed jog, no pressure",min:"30 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}]},
-  {title:"Week 2",theme:"Turn It Up",you:[{icon:"🧘",type:"pilates",title:"Pilates",detail:"Add resistance bands this week",min:"45 min"},{icon:"🔥",type:"hiit",title:"Home HIIT",detail:"20 min bodyweight circuit — no rest!",min:"20 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Reformer style or mat",min:"45 min"},{icon:"🚶",type:"walk",title:"Hilly Walk",detail:"Find some incline!",min:"35 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Flow & stretch",min:"45 min"},{icon:"🔥",type:"hiit",title:"Dance Cardio",detail:"YouTube dance class — fun one!",min:"30 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}],hub:[{icon:"🏋️",type:"strength",title:"Push + Core",detail:"Supersets: bench + plank circuits",min:"45 min"},{icon:"🏃",type:"cardio",title:"Tempo Run",detail:"Comfortably hard pace",min:"35 min"},{icon:"🏋️",type:"strength",title:"Pull + Core",detail:"Rows, pull-ups, dead bugs",min:"45 min"},{icon:"🔥",type:"hiit",title:"Treadmill HIIT",detail:"Incline sprints 30s on / 30s off",min:"25 min"},{icon:"🏋️",type:"strength",title:"Legs + Glutes",detail:"Romanian deadlifts, lunges",min:"45 min"},{icon:"🏃",type:"cardio",title:"5K Challenge",detail:"Run or walk 5K, time yourself!",min:"30 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}]},
-  {title:"Week 3",theme:"Sweat & Glow",you:[{icon:"🧘",type:"pilates",title:"Pilates",detail:"Longer 50 min class this week",min:"50 min"},{icon:"🚶",type:"walk",title:"Interval Walk",detail:"1 min fast / 2 min easy, repeat",min:"30 min"},{icon:"🔥",type:"hiit",title:"Bodyweight HIIT",detail:"Squats, burpees, mountain climbers",min:"25 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Lower body focus",min:"45 min"},{icon:"🚶",type:"walk",title:"Long Walk",detail:"60 min, try somewhere new",min:"60 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Full body + meditation finish",min:"45 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}],hub:[{icon:"🏋️",type:"strength",title:"Upper Strength",detail:"Increase weight from week 2",min:"50 min"},{icon:"🏃",type:"cardio",title:"Run + Cooldown",detail:"30 min run + 10 min stretch",min:"40 min"},{icon:"🏋️",type:"strength",title:"Lower Strength",detail:"Heavier squats, box jumps",min:"45 min"},{icon:"🔥",type:"hiit",title:"Full Body Circuit",detail:"5 moves, 5 rounds, minimal rest",min:"30 min"},{icon:"🏋️",type:"strength",title:"Push & Pull",detail:"Upper body superset day",min:"45 min"},{icon:"🏃",type:"cardio",title:"Endurance Run",detail:"Longest run so far",min:"40 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}]},
-  {title:"Week 4",theme:"Halfway Heroes",you:[{icon:"🧘",type:"pilates",title:"Pilates",detail:"Treat yourself — best class of the month",min:"45 min"},{icon:"🔥",type:"hiit",title:"30 Min HIIT",detail:"Your hardest session yet!",min:"30 min"},{icon:"🚶",type:"walk",title:"Walk + Podcast",detail:"Chill out walk, your fave pod",min:"45 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Arms & core",min:"45 min"},{icon:"🔥",type:"hiit",title:"Dance HIIT",detail:"Zumba or YouTube dance cardio",min:"30 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Deep stretch & flow reward session",min:"50 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}],hub:[{icon:"🏋️",type:"strength",title:"Max Effort Day",detail:"Test your 1-rep max on bench",min:"50 min"},{icon:"🏃",type:"cardio",title:"Fun Run",detail:"No pressure, just enjoy it",min:"30 min"},{icon:"🏋️",type:"strength",title:"Leg Day",detail:"Heaviest legs session yet",min:"50 min"},{icon:"🔥",type:"hiit",title:"Sprint Intervals",detail:"Treadmill sprints, all out",min:"25 min"},{icon:"🏋️",type:"strength",title:"Full Body",detail:"Compound moves only",min:"45 min"},{icon:"🏃",type:"cardio",title:"Celebration Run",detail:"Halfway there — celebrate it!",min:"35 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}]},
-  {title:"Week 5",theme:"Second Wind",you:[{icon:"🧘",type:"pilates",title:"Pilates",detail:"Add ankle weights if you have them",min:"45 min"},{icon:"🚶",type:"walk",title:"Power Walk",detail:"Arms pumping, fast pace",min:"35 min"},{icon:"🔥",type:"hiit",title:"Tabata",detail:"20s on / 10s off, 8 rounds, 4 moves",min:"25 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Balance & stability focus",min:"45 min"},{icon:"🚶",type:"walk",title:"Evening Walk",detail:"Unwind after work",min:"30 min"},{icon:"🔥",type:"hiit",title:"Sweat Session",detail:"YouTube full body HIIT, go hard",min:"35 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}],hub:[{icon:"🏋️",type:"strength",title:"Push Hypertrophy",detail:"Higher reps, moderate weight",min:"45 min"},{icon:"🏃",type:"cardio",title:"Progression Run",detail:"Start easy, finish strong",min:"35 min"},{icon:"🏋️",type:"strength",title:"Pull Hypertrophy",detail:"Focus on back width",min:"45 min"},{icon:"🔥",type:"hiit",title:"Home Circuit",detail:"Burpees, push-ups, jumps",min:"30 min"},{icon:"🏋️",type:"strength",title:"Legs & Core",detail:"Lunges, deadlifts, plank holds",min:"50 min"},{icon:"🏃",type:"cardio",title:"Treadmill Challenge",detail:"Hill setting, 30 minutes straight",min:"30 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}]},
-  {title:"Week 6",theme:"Consistent Queens",you:[{icon:"🧘",type:"pilates",title:"Pilates",detail:"Reformer or best mat class you know",min:"50 min"},{icon:"🔥",type:"hiit",title:"HIIT",detail:"30 min no excuses",min:"30 min"},{icon:"🚶",type:"walk",title:"Walk",detail:"45 min catch up with a friend",min:"45 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Upper body love",min:"45 min"},{icon:"🔥",type:"hiit",title:"Cardio Blast",detail:"Skipping, jumping jacks, high knees",min:"25 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Full body feel-good flow",min:"45 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}],hub:[{icon:"🏋️",type:"strength",title:"Strength",detail:"Go heavier than week 5",min:"50 min"},{icon:"🏃",type:"cardio",title:"Run",detail:"Beat your week 5 time",min:"35 min"},{icon:"🏋️",type:"strength",title:"Strength",detail:"Pull day, go heavy",min:"45 min"},{icon:"🔥",type:"hiit",title:"HIIT",detail:"Treadmill or circuit",min:"30 min"},{icon:"🏋️",type:"strength",title:"Legs",detail:"Volume up this week",min:"50 min"},{icon:"🏃",type:"cardio",title:"Long Run",detail:"Longest run of the challenge",min:"45 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}]},
-  {title:"Week 7",theme:"Final Stretch",you:[{icon:"🧘",type:"pilates",title:"Pilates",detail:"Favourite class — treat yourself",min:"45 min"},{icon:"🔥",type:"hiit",title:"HIIT + Walk",detail:"20 min HIIT + 20 min walk",min:"40 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Core & glutes focus",min:"45 min"},{icon:"🚶",type:"walk",title:"Walk",detail:"Long one — make it enjoyable",min:"60 min"},{icon:"🔥",type:"hiit",title:"Full Body HIIT",detail:"40 min — penultimate push!",min:"40 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Almost there — make it count",min:"50 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}],hub:[{icon:"🏋️",type:"strength",title:"Strength",detail:"Penultimate heavy week",min:"50 min"},{icon:"🏃",type:"cardio",title:"Run",detail:"Goal: personal best this season",min:"40 min"},{icon:"🏋️",type:"strength",title:"Strength",detail:"Full body compound",min:"50 min"},{icon:"🔥",type:"hiit",title:"HIIT",detail:"Hardest session of the challenge",min:"35 min"},{icon:"🏋️",type:"strength",title:"Legs",detail:"Last heavy leg day!",min:"50 min"},{icon:"🏃",type:"cardio",title:"Run",detail:"Penultimate run — go for it",min:"40 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"Walk together counts!",min:"20 min"}]},
-  {title:"Week 8",theme:"LEGEND WEEK 🏆",you:[{icon:"🧘",type:"pilates",title:"Pilates",detail:"Final week — best one yet",min:"50 min"},{icon:"🚶",type:"walk",title:"Walk",detail:"Celebrate how far you've come",min:"45 min"},{icon:"🔥",type:"hiit",title:"HIIT",detail:"Last one — leave it all on the floor!",min:"40 min"},{icon:"🧘",type:"pilates",title:"Pilates",detail:"Victory flow — you earned this",min:"50 min"},{icon:"🚶",type:"walk",title:"Walk",detail:"Final walk of the challenge",min:"30 min"},{icon:"🎉",type:"active-rest",title:"FINALE!",detail:"Stretch, celebrate, watch the finale!",min:"20 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"CHAMPIONS REST!",min:"∞"}],hub:[{icon:"🏋️",type:"strength",title:"Strength",detail:"Final heavy session",min:"50 min"},{icon:"🏃",type:"cardio",title:"Run",detail:"Last run — make it your best",min:"40 min"},{icon:"🏋️",type:"strength",title:"Full Body",detail:"All compound lifts, celebrate the gains",min:"50 min"},{icon:"🔥",type:"hiit",title:"Last HIIT",detail:"Victory HIIT — go all out!",min:"35 min"},{icon:"🏋️",type:"strength",title:"Pump Session",detail:"Light, fun, feel great for finale",min:"30 min"},{icon:"🎉",type:"active-rest",title:"FINALE!",detail:"Stretch, celebrate, watch the finale!",min:"20 min"},{icon:"🌿",type:"active-rest",title:"REST DAY",detail:"LEGENDS REST!",min:"∞"}]}
-];
-
 const DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const WEEK_THEMES=["Build the Habit","Turn It Up","Sweat & Glow","Halfway Heroes","Second Wind","Consistent Queens","Final Stretch","LEGEND WEEK 🏆"];
+
 let local=JSON.parse(localStorage.getItem(LKEY)||'{}');
 let state=local.state||{};
 let name1=local.name1||'';
@@ -498,36 +463,40 @@ let teamId=local.teamId||'';
 let usedLines=local.usedLines||[];
 let currentWeek=0;
 let selectedDay=null;
-let selP1Type='',selP2Type='',selP1Effort=0,selP2Effort=0,whoSelected='';
+let selP1Type='',selP2Type='',whoSelected='';
 let remoteData=null;
 
 function saveLocal(){localStorage.setItem(LKEY,JSON.stringify({state,name1,name2,teamName,teamId,usedLines}))}
 function gk(w,d){return 'w'+w+'d'+d}
 function isChallengeStarted(){return new Date()>=START_DATE}
 
-// JSONBin helpers
+function getCurrentChallengeWeek(){
+  const now=new Date();
+  const diff=now-START_DATE;
+  if(diff<0)return 0;
+  return Math.min(7,Math.floor(diff/(7*24*60*60*1000)));
+}
+
 async function fetchRemote(){
   try{
-    const r=await fetch(BIN_URL+'/latest',{headers:{'X-Master-Key':API_KEY}});
+    const r=await fetch(BIN_URL+'/latest',{headers:{'X-Master-Key':API_KEY,'X-Bin-Meta':false}});
     const j=await r.json();
-    remoteData=j.record||{teams:[]};
+    remoteData=j.record||j||{teams:[]};
+    if(!remoteData.teams)remoteData.teams=[];
     return remoteData;
   }catch(e){return remoteData||{teams:[]}}
 }
 
 async function pushRemote(data){
-  try{
-    await fetch(BIN_URL,{method:'PUT',headers:{'Content-Type':'application/json','X-Master-Key':API_KEY},body:JSON.stringify(data)});
-  }catch(e){}
+  try{await fetch(BIN_URL,{method:'PUT',headers:{'Content-Type':'application/json','X-Master-Key':API_KEY},body:JSON.stringify(data)});}catch(e){}
 }
 
 function setSyncStatus(msg){document.getElementById('sync-status').textContent=msg}
 
-function calcTeamPoints(teamState,hasP2){
+function calcTeamPoints(ts,hasP2){
   let pts=0,streak=0,maxStreak=0,bothDays=0;
   for(let w=0;w<8;w++)for(let d=0;d<6;d++){
-    const v=teamState[gk(w,d)];
-    const who=v?v.who:'';
+    const v=ts[gk(w,d)];const who=v?v.who:'';
     if(who==='you')pts+=1;
     else if(who==='hub'&&hasP2)pts+=1;
     else if(who==='both'){pts+=hasP2?5:1;streak++;maxStreak=Math.max(maxStreak,streak);bothDays++;}
@@ -599,12 +568,17 @@ function applyNames(){
   document.getElementById('hero-name1').textContent='💗 '+n1;
   document.getElementById('label-you').textContent=n1.toUpperCase()+' 💗';
   document.getElementById('who-you-label').textContent=n1;
+  document.getElementById('p1-log-name').textContent='💗 '+n1;
   const hasP2=!!name2;
   document.getElementById('hero-name2').style.display=hasP2?'':'none';
-  if(hasP2){document.getElementById('hero-name2').textContent='💪 '+n2;document.getElementById('label-hub').textContent=n2.toUpperCase()+' 💪';document.getElementById('who-hub-label').textContent=n2;}
   document.getElementById('who-hub-btn').style.display=hasP2?'':'none';
-  document.getElementById('who-both-btn').style.display=hasP2?'':'none';
   document.getElementById('label-hub').parentElement.style.display=hasP2?'':'none';
+  if(hasP2){
+    document.getElementById('hero-name2').textContent='💪 '+n2;
+    document.getElementById('label-hub').textContent=n2.toUpperCase()+' 💪';
+    document.getElementById('who-hub-label').textContent=n2;
+    document.getElementById('p2-log-name').textContent='💪 '+n2;
+  }
   if(teamName)document.getElementById('hero-team-label').textContent='🌴 '+teamName+' · 8 weeks · No workout = No episode';
   updateCheatDisplay();
 }
@@ -620,16 +594,15 @@ function updateCheatDisplay(){
 
 function renderTextBanner(){
   const slot=document.getElementById('text-banner-slot');
-  let b=null,bw=-1;
-  for(let w=0;w<8;w++){if(isBombshellRevealed(w)){b=getBombshellForWeek(w);bw=w;}}
-  if(!b){slot.innerHTML='';return;}
-  slot.innerHTML='<div class="text-banner" onclick="openBombshellModal()"><div class="text-banner-phone">📱</div><div class="text-banner-body"><div class="text-banner-title">YOU\'VE GOT A TEXT!</div><div class="text-banner-msg">Week '+(bw+1)+' Bombshell: <strong>'+b.title+'</strong> has entered the villa...</div><div class="text-banner-tap">Tap to see the challenge</div></div></div>';
+  const cw=getCurrentChallengeWeek();
+  if(!isBombshellRevealed(cw)){slot.innerHTML='';return;}
+  const b=getBombshellForWeek(cw);
+  slot.innerHTML='<div class="text-banner" onclick="openBombshellModal()"><div class="text-banner-phone">📱</div><div class="text-banner-body"><div class="text-banner-title">YOU\'VE GOT A TEXT!</div><div class="text-banner-msg">Week '+(cw+1)+' Bombshell: <strong>'+b.title+'</strong> has entered the villa...</div><div class="text-banner-tap">Tap to see the challenge</div></div></div>';
 }
 
 function openBombshellModal(){
-  let b=null,bw=-1;
-  for(let w=0;w<8;w++){if(isBombshellRevealed(w)){b=getBombshellForWeek(w);bw=w;}}
-  if(!b)return;
+  const cw=getCurrentChallengeWeek();
+  const b=getBombshellForWeek(cw);
   document.getElementById('bombshell-content').innerHTML='<div class="bc-title">💥 '+b.title+'</div><div class="bc-detail">'+b.detail+'</div><div class="bc-time">⏱ '+b.time+'</div>';
   document.getElementById('bombshell-modal').classList.add('show');
 }
@@ -651,15 +624,15 @@ async function renderLeaderboard(){
   const rankEmojis=['🥇','🥈','🥉'];
   el.innerHTML=ranked.map((t,i)=>{
     const av=AV_COLORS[i%AV_COLORS.length];
-    const initials=(t.name1||'?').slice(0,1)+(t.name2?(t.name2||'').slice(0,1):'');
+    const initials=((t.name1||'?')[0]+(t.name2?(t.name2[0]):'')). toUpperCase();
     const pct=Math.round(t.pts/maxPts*100);
     const isMe=t.id===teamId;
     return '<div class="lb-row" style="'+(isMe?'background:#fff9e0;border-radius:12px;padding:14px 10px;margin:0 -10px;':'')+'">'+
       '<div class="lb-rank">'+(rankEmojis[i]||i+1)+'</div>'+
-      '<div class="lb-avatar" style="background:'+av.bg+';color:'+av.color+'">'+initials.toUpperCase()+'</div>'+
+      '<div class="lb-avatar" style="background:'+av.bg+';color:'+av.color+'">'+initials+'</div>'+
       '<div class="lb-names">'+
         '<div class="lb-name">'+t.name1+(t.name2?' & '+t.name2:'')+(isMe?' 👈':'')+'</div>'+
-        '<div class="lb-sub">'+(t.teamName||'')+(t.teamName?' · ':'')+t.bothDays+' both-done days · 🔥'+t.streak+' streak</div>'+
+        '<div class="lb-sub">'+(t.teamName?t.teamName+' · ':'')+t.bothDays+' both-done · 🔥'+t.streak+'</div>'+
         '<div class="lb-bar-bg"><div class="lb-bar-fill" style="width:'+pct+'%"></div></div>'+
       '</div>'+
       '<div class="lb-pts"><div class="lb-pts-num">'+t.pts+'</div><div class="lb-pts-lbl">pts</div></div>'+
@@ -668,7 +641,7 @@ async function renderLeaderboard(){
 }
 
 async function syncToLeaderboard(){
-  setSyncStatus('Syncing to leaderboard...');
+  setSyncStatus('Syncing... 🌴');
   const data=await fetchRemote();
   if(!data.teams)data.teams=[];
   const idx=data.teams.findIndex(t=>t.id===teamId);
@@ -676,7 +649,7 @@ async function syncToLeaderboard(){
   if(idx>=0)data.teams[idx]=entry;else data.teams.push(entry);
   await pushRemote(data);
   setSyncStatus('Leaderboard updated ✓');
-  setTimeout(()=>setSyncStatus(''),3000);
+  setTimeout(()=>setSyncStatus(''),2500);
 }
 
 function startChallenge(){
@@ -697,6 +670,7 @@ function decideScreen(){
     document.getElementById('setup-screen').style.display='none';
     document.getElementById('countdown-screen').style.display='none';
     document.getElementById('app').style.display='block';
+    currentWeek=getCurrentChallengeWeek();
     applyNames();renderTextBanner();renderWeekTabs();renderWeek();renderProgress();
   }else{
     document.getElementById('setup-screen').style.display='none';
@@ -747,25 +721,24 @@ function saveNames(){
 function openCheatInfo(){
   const{earned,used,remaining}=calcCheatDays();
   const cons=calcCurrentCons();const toNext=earned<3?(6-(cons%6)||6):0;
-  document.getElementById('cheat-modal-body').innerHTML='<strong>'+earned+' / 3</strong> cheat days earned.<br><br><strong>'+used+'</strong> used · <strong>'+remaining+'</strong> remaining.<br><br>'+(earned<3?'You need <strong>'+toNext+' more consecutive both-done days</strong> to earn your next cheat day.<br><br>':'Max 3 earned — absolute legends!<br><br>')+'Use a cheat day to skip without breaking your streak.';
+  document.getElementById('cheat-modal-body').innerHTML='<strong>'+earned+' / 3</strong> cheat days earned.<br><br><strong>'+used+'</strong> used · <strong>'+remaining+'</strong> remaining.<br><br>'+(earned<3?'Need <strong>'+toNext+' more consecutive both-done days</strong> to earn next.<br><br>':'Max 3 earned — absolute legends!<br><br>')+'Use a cheat day to skip a day without breaking your streak.';
   document.getElementById('cheat-modal').classList.add('show');
 }
 
 function renderWeekTabs(){
-  document.getElementById('week-tabs').innerHTML=weeks.map((w,i)=>{
+  document.getElementById('week-tabs').innerHTML=Array.from({length:8},(_,i)=>{
     const allDone=isWeekComplete(i);
     const cls=i===currentWeek?'active':allDone?'completed':'';
-    return '<button class="week-tab '+cls+'" onclick="selectWeek('+i+')">'+w.title+'</button>';
+    return '<button class="week-tab '+cls+'" onclick="selectWeek('+i+')">'+(i+1)+'</button>';
   }).join('');
 }
 function selectWeek(i){currentWeek=i;renderWeekTabs();renderWeek()}
 
 function renderWeek(){
-  const w=weeks[currentWeek];
-  const n1=name1||'You',n2=name2||'Partner';
+  const n1=name1||'You';
   const circles=DAYS.map((d,i)=>{
     const k=gk(currentWeek,i);const entry=state[k];const isRest=d==='Sun';
-    if(isRest)return '<div class="day-cell"><div class="day-label">'+d+'</div><div class="day-circle rest">🌿</div></div>';
+    if(isRest)return '<div class="day-cell"><div class="day-label">'+d+'</div><div class="day-circle rest">🌿</div><div class="day-log-detail"></div></div>';
     let cls='',icon='○';
     if(entry){const who=entry.who;if(who==='you'){cls='you-done';icon='💗';}else if(who==='hub'){cls='hub-done';icon='💪';}else if(who==='both'){cls='both-done';icon='🌴';}else if(who==='cheat'){cls='cheat-used';icon='🎟️';}}
     const wt=entry&&entry.p1type?WTYPES.find(t=>t.id===entry.p1type):null;
@@ -773,29 +746,23 @@ function renderWeek(){
   }).join('');
 
   const bombshell=isBombshellRevealed(currentWeek)?getBombshellForWeek(currentWeek):null;
-  const bombshellCard=bombshell?'<div class="workout-card bombshell" onclick="openBombshellModal()" style="grid-column:1/-1"><div class="workout-card-icon">📱💥</div><div class="workout-card-title">BOMBSHELL: '+bombshell.title+'</div><div class="workout-card-detail">'+bombshell.detail+'</div><div class="workout-card-min">⏱ '+bombshell.time+' · Tap for full details</div></div>':'';
+  const bombshellBanner=bombshell?'<div onclick="openBombshellModal()" style="background:linear-gradient(135deg,#fff0e0,#ffd9b0);border:2px solid #ffb347;border-radius:14px;padding:14px;cursor:pointer;margin-top:4px"><div style="font-size:13px;font-weight:600;color:#c0622d">📱💥 Week '+(currentWeek+1)+' Bombshell: '+bombshell.title+'</div><div style="font-size:12px;color:#888;margin-top:3px">Tap to see the challenge · ⏱ '+bombshell.time+'</div></div>':'';
 
-  function makeCards(plan,isP1){
-    return plan.map((wo,i)=>{
-      const entry=state[gk(currentWeek,i)];const who=entry?entry.who:'';
-      const logged=isP1?(who==='you'||who==='both'||who==='cheat'):(who==='hub'||who==='both'||who==='cheat');
-      const tk=isP1?'p1type':'p2type',dk=isP1?'p1duration':'p2duration',ek=isP1?'p1effort':'p2effort';
-      const wt=logged&&entry[tk]?WTYPES.find(t=>t.id===entry[tk]):null;
-      const ei=['😌','💪','🔥'];
-      const extra=logged?'<div style="margin-top:5px;font-size:11px;color:#2a9d8f">'+(wt?wt.icon+' '+wt.label:'✓ Done')+(entry[dk]?' · '+entry[dk]+'min':'')+(entry[ek]?' · '+ei[entry[ek]-1]:'')+'</div>':'';
-      return '<div class="workout-card '+wo.type+'"><div class="workout-card-icon">'+wo.icon+'</div><div class="workout-card-title">'+DAYS[i]+': '+wo.title+'</div><div class="workout-card-detail">'+wo.detail+'</div><div class="workout-card-min">⏱ '+wo.min+'</div>'+extra+'</div>';
-    }).join('');
-  }
-
-  const recapBtn=isWeekComplete(currentWeek)?'<button onclick="showWeekRecap('+currentWeek+')" style="background:var(--gold);color:var(--dark);border:none;padding:10px 20px;border-radius:100px;font-family:\'DM Sans\',sans-serif;font-size:13px;font-weight:500;cursor:pointer;margin-bottom:16px;display:block">📊 See week '+( currentWeek+1)+' recap</button>':'';
-  const partnerSection=name2?'<div class="week-card"><div class="workouts-title">💪 '+n2+"'s Workouts</div><div class=\"workout-cards\">"+makeCards(w.hub,false)+'</div></div>':'';
+  const recapBtn=isWeekComplete(currentWeek)?'<button onclick="showWeekRecap('+currentWeek+')" style="background:var(--gold);color:var(--dark);border:none;padding:10px 20px;border-radius:100px;font-family:\'DM Sans\',sans-serif;font-size:13px;font-weight:500;cursor:pointer;margin-bottom:16px;display:block">📊 Week '+(currentWeek+1)+' recap</button>':'';
 
   document.getElementById('week-content').innerHTML=
-    '<div class="week-card"><div class="week-header"><div class="week-title">'+w.title+'</div><div class="week-theme">'+w.theme+'</div></div>'+recapBtn+
-    '<div class="legend"><span class="legend-item"><span class="legend-dot" style="background:var(--pink)"></span>'+n1+' done</span>'+(name2?'<span class="legend-item"><span class="legend-dot" style="background:var(--teal)"></span>'+n2+' done</span>':'')+
-    '<span class="legend-item"><span class="legend-dot" style="background:var(--gold)"></span>Both 🌴</span><span class="legend-item"><span class="legend-dot" style="background:#a855f7"></span>Cheat day</span><span style="font-size:12px;color:#aaa">Tap to log</span></div>'+
-    '<div class="days-grid">'+circles+'</div></div>'+
-    '<div class="week-card"><div class="workouts-title">💗 '+n1+"'s Workouts</div><div class=\"workout-cards\">"+makeCards(w.you,true)+bombshellCard+'</div></div>'+partnerSection;
+    '<div class="week-card">'+
+    '<div class="week-header"><div class="week-title">Week '+(currentWeek+1)+'</div><div class="week-theme">'+WEEK_THEMES[currentWeek]+'</div></div>'+
+    recapBtn+
+    '<div class="legend">'+
+    '<span class="legend-item"><span class="legend-dot" style="background:var(--pink)"></span>'+n1+' done</span>'+
+    (name2?'<span class="legend-item"><span class="legend-dot" style="background:var(--teal)"></span>'+name2+' done</span>':'')+
+    '<span class="legend-item"><span class="legend-dot" style="background:var(--gold)"></span>Both 🌴</span>'+
+    '<span class="legend-item"><span class="legend-dot" style="background:#a855f7"></span>Cheat</span>'+
+    '<span style="font-size:11px;color:#aaa">Tap to log</span></div>'+
+    '<div class="days-grid">'+circles+'</div>'+
+    bombshellBanner+
+    '</div>';
 }
 
 function renderProgress(){
@@ -821,7 +788,6 @@ function showWeekRecap(wi){
     if(e.who==='both'||e.who==='cheat')bothDays++;
     if(e.p1duration)totalMins+=parseInt(e.p1duration)||0;
     if(e.p2duration)totalMins+=parseInt(e.p2duration)||0;
-    if(e.p1effort===3||e.p2effort===3)beastCount++;
     if(e.p1type)topType[e.p1type]=(topType[e.p1type]||0)+1;
     if(e.p2type)topType[e.p2type]=(topType[e.p2type]||0)+1;
   }
@@ -830,61 +796,78 @@ function showWeekRecap(wi){
   document.getElementById('recap-content').innerHTML=
     '<div class="recap-card"><div class="recap-title">Week '+(wi+1)+' Recap 🌴</div>'+
     '<div class="recap-stat"><span>Both-done days</span><span class="recap-stat-val">'+bothDays+' / 6</span></div>'+
-    '<div class="recap-stat"><span>Total minutes sweated</span><span class="recap-stat-val">'+(totalMins||'?')+'</span></div>'+
-    '<div class="recap-stat"><span>Beast mode moments</span><span class="recap-stat-val">'+beastCount+'</span></div>'+
+    '<div class="recap-stat"><span>Total mins sweated</span><span class="recap-stat-val">'+(totalMins||'?')+'</span></div>'+
     (tw?'<div class="recap-stat"><span>Most popular workout</span><span class="recap-stat-val">'+tw.icon+' '+tw.label+'</span></div>':'')+
     '<div class="recap-narration">"'+(WEEK_RECAPS[wi]||'Another week done in the villa. The gains are real.')+'"<br><br>— Iain Stirling, probably</div></div>';
   document.getElementById('recap-modal').classList.add('show');
 }
 
-function buildWGrid(elId,selId){
-  document.getElementById(elId).innerHTML=WTYPES.map(t=>'<button class="wtype-btn '+(selId===t.id?'sel':'')+'" onclick="selectWType(\''+elId+'\',\''+t.id+'\')"><span class="wtype-icon">'+t.icon+'</span>'+t.label+'</button>').join('');
+function buildWScroll(elId,selId){
+  document.getElementById(elId).innerHTML=WTYPES.map(t=>'<button class="wt-pill '+(selId===t.id?'sel':'')+'" onclick="selectWType(\''+elId+'\',\''+t.id+'\')">'+ t.icon+' '+t.label+'</button>').join('');
 }
-function selectWType(gid,id){if(gid==='wtype-p1')selP1Type=id;else selP2Type=id;buildWGrid(gid,id);}
-function setEffort(person,level){
-  if(person==='p1')selP1Effort=level;else selP2Effort=level;
-  document.querySelectorAll('#effort-'+person+' .effort-btn').forEach((b,i)=>{b.classList.remove('sel-1','sel-2','sel-3');if(i+1===level)b.classList.add('sel-'+(i+1));});
+function selectWType(gid,id){
+  if(gid==='wtype-p1')selP1Type=id;else selP2Type=id;
+  buildWScroll(gid,id);
 }
+
 function selectWho(who){
   whoSelected=who;
   ['you','hub','both','cheat'].forEach(w=>{const btn=document.getElementById('who-'+w+'-btn');if(btn)btn.classList.toggle('selected',w===who);});
-  document.getElementById('log-p1-section').style.display=who==='cheat'?'none':'block';
-  document.getElementById('log-p2-section').style.display=(name2&&(who==='hub'||who==='both'))?'block':'none';
+  const showP1=who==='you'||who==='both'||who==='hub';
+  const showP2=(who==='hub'||who==='both')&&name2;
+  document.getElementById('quick-log-section').style.display=who==='cheat'?'none':'block';
+  document.getElementById('p1-log-row').style.display=showP1&&who!=='hub'?'flex':'none';
+  document.getElementById('p2-log-row').style.display=showP2||who==='hub'?'flex':'none';
+  if(who==='hub'){
+    document.getElementById('p1-log-row').style.display='none';
+    document.getElementById('p2-log-row').style.display='flex';
+  }
 }
+
 function openModal(dayIndex){
-  selectedDay=dayIndex;selP1Type='';selP2Type='';selP1Effort=0;selP2Effort=0;whoSelected='';
+  selectedDay=dayIndex;selP1Type='';selP2Type='';whoSelected='';
   const entry=state[gk(currentWeek,dayIndex)];
-  const n1=name1||'You',n2=name2||'Partner';
-  document.getElementById('modal-title').textContent=DAYS[dayIndex]+' — log workout';
-  document.getElementById('modal-day-label').textContent='Week '+(currentWeek+1)+', '+DAYS[dayIndex];
-  document.getElementById('log-p1-title').textContent=n1.toUpperCase()+"'S WORKOUT";
-  document.getElementById('log-p2-title').textContent=n2.toUpperCase()+"'S WORKOUT";
-  if(entry){
-    selP1Type=entry.p1type||'';selP2Type=entry.p2type||'';selP1Effort=entry.p1effort||0;selP2Effort=entry.p2effort||0;
-    document.getElementById('p1-duration').value=entry.p1duration||'';document.getElementById('p2-duration').value=entry.p2duration||'';
-    document.getElementById('p1-notes').value=entry.p1notes||'';document.getElementById('p2-notes').value=entry.p2notes||'';
-  }else{['p1-duration','p2-duration','p1-notes','p2-notes'].forEach(id=>document.getElementById(id).value='');}
-  buildWGrid('wtype-p1',selP1Type);buildWGrid('wtype-p2',selP2Type);
-  if(selP1Effort)setEffort('p1',selP1Effort);if(selP2Effort)setEffort('p2',selP2Effort);
-  const{remaining}=calcCheatDays();
-  document.getElementById('cheat-row').style.display=(remaining>0||(entry&&entry.who==='cheat'))?'':'none';
-  document.getElementById('cheat-remaining-modal').textContent=remaining;
+  document.getElementById('modal-title').textContent=DAYS[dayIndex]+' — Week '+(currentWeek+1);
+  document.getElementById('modal-day-label').textContent='Tap who completed today then pick workout';
   document.getElementById('who-hub-btn').style.display=name2?'':'none';
-  document.getElementById('who-both-btn').style.display=name2?'':'none';
-  if(entry&&entry.who)selectWho(entry.who);
-  else{document.getElementById('log-p1-section').style.display='block';document.getElementById('log-p2-section').style.display='none';['you','hub','both','cheat'].forEach(w=>{const btn=document.getElementById('who-'+w+'-btn');if(btn)btn.classList.remove('selected');});}
+  document.getElementById('who-cheat-btn').style.display='flex';
+  const{remaining}=calcCheatDays();
+  if(remaining===0&&!(entry&&entry.who==='cheat'))document.getElementById('who-cheat-btn').style.display='none';
+  document.getElementById('cheat-remaining-modal').textContent=remaining;
+  document.getElementById('quick-log-section').style.display='none';
+  document.getElementById('p1-log-row').style.display='none';
+  document.getElementById('p2-log-row').style.display='none';
+  ['you','hub','both','cheat'].forEach(w=>{const btn=document.getElementById('who-'+w+'-btn');if(btn)btn.classList.remove('selected');});
+  if(entry){
+    selP1Type=entry.p1type||'';selP2Type=entry.p2type||'';
+    document.getElementById('p1-duration').value=entry.p1duration||'';
+    document.getElementById('p2-duration').value=entry.p2duration||'';
+    if(entry.who)selectWho(entry.who);
+  }else{
+    document.getElementById('p1-duration').value='';
+    document.getElementById('p2-duration').value='';
+  }
+  buildWScroll('wtype-p1',selP1Type);
+  buildWScroll('wtype-p2',selP2Type);
   document.getElementById('modal').classList.add('show');
 }
+
 function closeModal(){document.getElementById('modal').classList.remove('show');selectedDay=null;}
+
 async function saveLog(){
   if(selectedDay===null)return;
-  if(!whoSelected){alert('Please select who completed today!');return;}
-  state[gk(currentWeek,selectedDay)]={who:whoSelected,p1type:selP1Type,p1duration:document.getElementById('p1-duration').value,p1effort:selP1Effort,p1notes:document.getElementById('p1-notes').value,p2type:selP2Type,p2duration:document.getElementById('p2-duration').value,p2effort:selP2Effort,p2notes:document.getElementById('p2-notes').value};
+  if(!whoSelected){alert('Tap who completed today!');return;}
+  state[gk(currentWeek,selectedDay)]={
+    who:whoSelected,
+    p1type:selP1Type,p1duration:document.getElementById('p1-duration').value,
+    p2type:selP2Type,p2duration:document.getElementById('p2-duration').value,
+  };
   saveLocal();closeModal();renderWeek();renderProgress();renderWeekTabs();
   showCelebrate(whoSelected);
   await syncToLeaderboard();
   setTimeout(()=>{if(isWeekComplete(currentWeek)&&!document.getElementById('recap-modal').classList.contains('show'))showWeekRecap(currentWeek);},2500);
 }
+
 ['modal','edit-modal','cheat-modal','recap-modal','bombshell-modal'].forEach(id=>{
   document.getElementById(id).addEventListener('click',function(e){if(e.target===this)this.classList.remove('show');});
 });
