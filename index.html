@@ -383,7 +383,7 @@ const BIN_ID='6a1f81f2f5f4af5e29affe14';
 const API_KEY='$2a$10$HgaGaVP415wlNMAUe1OoZOP7nX.moNf6M1ntJ4Wt.i.B1OIlTmbiy';
 const BIN_URL='https://api.jsonbin.io/v3/b/'+BIN_ID;
 const LKEY='lifc_local_v6';
-const START_DATE=new Date('2025-06-08T00:00:00');
+const START_DATE=new Date('2026-06-08T00:00:00');
 
 const IAIN_LINES=[
   "She's a fit bird and he's punching. Both done though — the villa is FUMING. 🌴",
@@ -729,7 +729,8 @@ function renderWeekTabs(){
   document.getElementById('week-tabs').innerHTML=Array.from({length:8},(_,i)=>{
     const allDone=isWeekComplete(i);
     const cls=i===currentWeek?'active':allDone?'completed':'';
-    return '<button class="week-tab '+cls+'" onclick="selectWeek('+i+')">'+(i+1)+'</button>';
+    const label=i===currentWeek?'W'+(i+1)+' · '+WEEK_THEMES[i]:'W'+(i+1);
+    return '<button class="week-tab '+cls+'" onclick="selectWeek('+i+')">'+label+'</button>';
   }).join('');
 }
 function selectWeek(i){currentWeek=i;renderWeekTabs();renderWeek()}
